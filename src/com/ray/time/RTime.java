@@ -7,7 +7,7 @@ import java.util.Date;
 
 import com.ray.util.io.Out;
 
-public class Time extends Date {
+public class RTime extends Date {
     
     /**
      * 
@@ -15,6 +15,7 @@ public class Time extends Date {
     private static final long serialVersionUID = -5721385854718119819L;
     private static DateFormat dateFormat2 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss:SS");
     private static DateFormat dateFormat1 = new SimpleDateFormat("yyyy年MM月dd日 HH时mm分ss秒SS");
+    
     /**
      * 创建日期对象
      * @param yy    年份
@@ -68,11 +69,11 @@ public class Time extends Date {
     }
     
     public static void main(String[] args) {
-        Date t = Time.create(2018, 10, 20, 19, 38, 10, 1);
-        Out.p(Time.formate(t));
+        Date t = RTime.create(2018, 10, 20, 19, 38, 10, 1);
+        Out.p(RTime.formate(t));
         
-        t = Time.create(2018, 10, 20, 19, 38, 10, 2);
-        Out.p(Time.formate(t));
+        t = RTime.create(2018, 10, 20, 19, 38, 10, 2);
+        Out.p(RTime.formate(t));
     }
     
 }

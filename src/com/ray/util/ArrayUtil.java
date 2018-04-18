@@ -12,13 +12,40 @@ public class ArrayUtil {
 	 * @param size
 	 * @return
 	 */
-	public static Integer[] intArr(int size) {
+	public static Integer[] integerArr(int size) {
 		Integer[] arr = new Integer[size]; 
 		for(int i = 0; i < arr.length; i ++) {
 			arr[i] = i + 1;
 		}
 		return arr;
 	}
+	
+	   /**
+     * 获取 整形数组
+     * @param size
+     * @return
+     */
+    public static int[] intArr(int size) {
+        int[] arr = new int[size]; 
+        for(int i = 0; i < arr.length; i ++) {
+            arr[i] = i + 1;
+        }
+        return arr;
+    }
+    
+    /**
+     * 将一串数字保存为数组
+     * @return
+     */
+    public static int[] numberToArray(int num) {
+        
+        String[] arr = String.valueOf(num).split("");
+        int[] nums = new int[arr.length];
+        
+        for (int i = 0; i < arr.length; i++)
+            nums[i] = Integer.valueOf(arr[i]);
+        return nums;
+    }
 	
 	/**
 	 * 获取整形旋转数组，可以指定旋转的位置
@@ -157,5 +184,8 @@ public class ArrayUtil {
     	Out.p(arr);
     }
 	
+    public static void main(String[] args) {
+        Out.p(numberToArray(12345));
+    }
 	
 }
