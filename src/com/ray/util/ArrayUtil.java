@@ -183,7 +183,7 @@ public class ArrayUtil {
     public static <T> void show(T[] arr) {
     	Out.p(arr);
     }
-	
+    
     public static void main(String[] args) {
         Out.p(numberToArray(12345));
     }
