@@ -5,7 +5,7 @@ import java.util.concurrent.TimeUnit;
 
 import javax.swing.JFrame;
 
-public class FrameUtil {
+public class RFrame {
     
     public static JFrame commonFrame(String name) {
         JFrame frame = new JFrame(name);

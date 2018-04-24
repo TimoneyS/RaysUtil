@@ -5,7 +5,7 @@ import java.util.Random;
 import com.ray.util.io.Out;
 
 @SuppressWarnings({ "rawtypes", "unchecked" })
-public class ArrayUtil {
+public class RArrays {
 	
 	/**
 	 * 获取 整形数组

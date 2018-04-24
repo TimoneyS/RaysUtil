@@ -1,4 +1,4 @@
-package com.ray.time;
+package com.ray.util;
 
 import java.text.DateFormat;
 import java.text.ParseException;

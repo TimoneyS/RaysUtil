@@ -38,7 +38,7 @@ public class RMath {
         Timer t = Timer.create();
         
         t.click();
-        rs = permutation(ArrayUtil.intArr(size));
+        rs = permutation(RArrays.intArr(size));
         t.click();        
         t.show();
     }
