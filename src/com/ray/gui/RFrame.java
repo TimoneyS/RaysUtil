@@ -19,7 +19,7 @@ public class RFrame {
     }
     
     /**
-     * Ë¢ÐÂFrame
+     * Ë¢ÐÂ Frame
      */
     public static void refreshFrame(JFrame frame, int delay, TimeUnit unit) {
         // Ô¤¶©Ë¢ÐÂ
