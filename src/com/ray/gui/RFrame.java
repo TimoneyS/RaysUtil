@@ -1,4 +1,4 @@
-package com.ray.util;
+package com.ray.gui;
 
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;

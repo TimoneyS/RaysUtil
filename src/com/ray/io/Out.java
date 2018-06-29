@@ -1,4 +1,4 @@
-package com.ray.util.io;
+package com.ray.io;
 
 import java.util.Arrays;
 

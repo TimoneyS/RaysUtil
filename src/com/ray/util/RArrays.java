@@ -2,7 +2,7 @@ package com.ray.util;
 
 import java.util.Random;
 
-import com.ray.util.io.Out;
+import com.ray.io.Out;
 
 @SuppressWarnings({ "rawtypes", "unchecked" })
 public class RArrays {

@@ -5,7 +5,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import com.ray.util.io.Out;
+import com.ray.io.Out;
 
 public class RTime extends Date {
     
