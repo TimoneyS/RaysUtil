@@ -7,6 +7,29 @@ import java.util.Scanner;
 public class In {
     
     /**
+     * 获取类路径下的资源url
+     * @param res
+     * @return
+     */
+    public static String getClassPathResource(String res) {
+        String path = In.class.getClassLoader().getResource(res).getFile();
+        return path;
+    }
+    
+    /**
+     * 获取指定类的路径的资源url
+     * @param cls
+     * @param res
+     * @return
+     */
+    public static String getClassPathResource(Class<?> cls, String res) {
+        String pkgName = cls.getPackage().getName().replaceAll("\\.", "/");
+        
+        String path = In.class.getClassLoader().getResource(pkgName + "/" + res).getFile();
+        return path;
+    }
+    
+    /**
      * 从工程目录获取Scanner
      * @param res
      * @return
