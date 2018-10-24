@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
-public class RMath {
+public class Math {
     
     public static List<Integer> permutation(int[] nums) {
         Arrays.sort(nums);
@@ -38,7 +38,7 @@ public class RMath {
         Timer t = Timer.create();
         
         t.click();
-        rs = permutation(RArrays.intArr(size));
+        rs = permutation(ArrayUtil.intArr(size));
         t.click();        
         t.show();
     }

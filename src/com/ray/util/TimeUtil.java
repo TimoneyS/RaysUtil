@@ -7,7 +7,7 @@ import java.util.Date;
 
 import com.ray.io.Out;
 
-public class RTime extends Date {
+public class TimeUtil extends Date {
     
     /**
      * 
@@ -69,11 +69,11 @@ public class RTime extends Date {
     }
     
     public static void main(String[] args) {
-        Date t = RTime.create(2018, 10, 20, 19, 38, 10, 1);
-        Out.p(RTime.formate(t));
+        Date t = TimeUtil.create(2018, 10, 20, 19, 38, 10, 1);
+        Out.p(TimeUtil.formate(t));
         
-        t = RTime.create(2018, 10, 20, 19, 38, 10, 2);
-        Out.p(RTime.formate(t));
+        t = TimeUtil.create(2018, 10, 20, 19, 38, 10, 2);
+        Out.p(TimeUtil.formate(t));
     }
     
 }

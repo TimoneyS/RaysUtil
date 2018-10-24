@@ -5,7 +5,7 @@ package com.ray.util;
  * @author rays1
  *
  */
-public class RString {
+public class StringUtil {
     
     /**
      * ½«×Ö·û´®ÖØ¸´n´Î
