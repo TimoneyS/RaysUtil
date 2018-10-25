@@ -33,6 +33,36 @@ public class Out {
 	/** 打印数组并换行 */public static void p(long[] t)       { p(Arrays.toString(t)); }
 	/** 打印数组并换行 */public static void p(double[] t)     { p(Arrays.toString(t)); }
 	/** 打印数组并换行 */public static void p(char[] t)       { p(Arrays.toString(t)); }
+	
+	/**
+	 * 打印二维数组
+	 * @param arr
+	 * @param fmt
+	 */
+	public static void p(int[][] arr, String fmt) {
+	    for (int[] is : arr) {
+            for (int i : is) {
+                Out.pf(fmt, i);
+            }
+            Out.p();
+        }
+	}
+	
+	   /**
+     * 打印二维数组
+     * @param arr
+     * @param fmt
+     */
+    public static void p(double[][] arr, String fmt) {
+        for (double[] is : arr) {
+            for (double i : is) {
+                Out.pf(fmt, i);
+            }
+            Out.p();
+        }
+    }
+	
+	
 	/**
 	 * 格式化输出
 	 * @param s

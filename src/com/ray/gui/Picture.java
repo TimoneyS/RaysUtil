@@ -462,9 +462,29 @@ public final class Picture implements ActionListener {
      *            the command-line arguments
      */
     public static void main(String[] args) {
-        Picture picture = new Picture(args[0]);
-        System.out.printf("%d-by-%d\n", picture.width(), picture.height());
-        picture.show();
+        
+        int width = 640;
+        int height = 320;
+        
+        Picture pic = new Picture(width, height);
+        
+        for (int i = 0; i < width; i++) {
+            for (int j = 0; j < height; j++) {
+                pic.set(i, j, Color.GRAY);
+            }
+        }
+        
+        for (int i = 100; i < 200; i++) {
+            for (int j = 100; j < 200; j++) {
+                pic.set(i, j, Color.RED);
+            }
+        }
+        
+        
+        
+        pic.show();
+        
+        
     }
 
 }
