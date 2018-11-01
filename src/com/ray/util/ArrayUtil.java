@@ -236,6 +236,54 @@ public class ArrayUtil {
 			swap(arr, l1 + i, l2 + i);
 	}
 	
+    /**
+     * 交换数组元素位置
+     * @param arr
+     * @param i
+     * @param j
+     */
+    public static void swap(int[] arr, int i, int j) {
+        int temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+    }
+    
+    /**
+     * 交换数组的两个区域（要求两个区域必须没有交集，而且大小一致）
+     * @param arr   数组
+     * @param l1    区域1开始边界
+     * @param l2    区域2开始边界
+     * @param size  区域大小
+     */
+    public static void swap(int[] arr,  int l1, int l2, int size) {
+        for (int i = 0; i < size; i ++)
+            swap(arr, l1 + i, l2 + i);
+    }
+    
+    /**
+     * 交换数组元素位置
+     * @param arr
+     * @param i
+     * @param j
+     */
+    public static void swap(boolean[] arr, int i, int j) {
+        boolean temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+    }
+    
+    /**
+     * 交换数组的两个区域（要求两个区域必须没有交集，而且大小一致）
+     * @param arr   数组
+     * @param l1    区域1开始边界
+     * @param l2    区域2开始边界
+     * @param size  区域大小
+     */
+    public static void swap(boolean[] arr,  int l1, int l2, int size) {
+        for (int i = 0; i < size; i ++)
+            swap(arr, l1 + i, l2 + i);
+    }
+	
     public static void main(String[] args) {
         Out.p(numberToArray(12345));
     }
