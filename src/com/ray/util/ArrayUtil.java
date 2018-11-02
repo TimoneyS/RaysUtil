@@ -47,6 +47,30 @@ public class ArrayUtil {
 	    return index;
     }
 	
+    /**
+     * 数组最小元素的索引
+     * @param arr
+     * @param i
+     * @param j
+     */
+    public static int indexOfMin(int[] arr) {
+        return indexOfMin(arr, 0, arr.length-1);
+    }
+    
+    /**
+     * 某一区域内最小元素的索引
+     * @param arr
+     * @param i
+     * @param j
+     */
+    public static int indexOfMin(int[] arr, int lo, int hi) {
+        int index = lo;
+        for (int i = lo; i <= hi; i++) {
+            if (arr[i] < arr[index]) index = i;
+        }
+        return index;
+    }
+	
 	/**
      * 获取 整形数组
      * @param size
