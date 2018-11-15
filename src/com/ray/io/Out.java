@@ -3,14 +3,14 @@ package com.ray.io;
 import java.util.Arrays;
 
 /**
- * ×Ô½¨µÄ¼ò»¯±ê×¼Êä³öµÄ¸¨ÖúÀà
+ * ï¿½Ô½ï¿½ï¿½Ä¼ò»¯±ï¿½×¼ï¿½ï¿½ï¿½ï¿½Ä¸ï¿½ï¿½ï¿½ï¿½ï¿½
  * @author Ray
  *
  */
 public class Out {
     
     /**
-     * ´òÓ¡²¢»»ÐÐ
+     * ï¿½ï¿½Ó¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
      * @param t
      */
     public static <T> void p() {
@@ -18,7 +18,7 @@ public class Out {
     }
 	
 	/**
-	 * ´òÓ¡²¢»»ÐÐ
+	 * ï¿½ï¿½Ó¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	 * @param t
 	 */
 	public static <T> void p(T t) {
@@ -26,16 +26,16 @@ public class Out {
 	}
 	
 	
-	/** ´òÓ¡Êý×é²¢»»ÐÐ */public static <T> void p(T[] t)      { p(Arrays.toString(t)); }
-	/** ´òÓ¡Êý×é²¢»»ÐÐ */public static void p(boolean[] t)    { p(Arrays.toString(t)); }
-	/** ´òÓ¡Êý×é²¢»»ÐÐ */public static void p(short[] t)      { p(Arrays.toString(t)); }
-	/** ´òÓ¡Êý×é²¢»»ÐÐ */public static void p(int[] t)        { p(Arrays.toString(t)); }
-	/** ´òÓ¡Êý×é²¢»»ÐÐ */public static void p(long[] t)       { p(Arrays.toString(t)); }
-	/** ´òÓ¡Êý×é²¢»»ÐÐ */public static void p(double[] t)     { p(Arrays.toString(t)); }
-	/** ´òÓ¡Êý×é²¢»»ÐÐ */public static void p(char[] t)       { p(Arrays.toString(t)); }
+	/** ï¿½ï¿½Ó¡ï¿½ï¿½ï¿½é²¢ï¿½ï¿½ï¿½ï¿½ */public static <T> void p(T[] t)      { p(Arrays.toString(t)); }
+	/** ï¿½ï¿½Ó¡ï¿½ï¿½ï¿½é²¢ï¿½ï¿½ï¿½ï¿½ */public static void p(boolean[] t)    { p(Arrays.toString(t)); }
+	/** ï¿½ï¿½Ó¡ï¿½ï¿½ï¿½é²¢ï¿½ï¿½ï¿½ï¿½ */public static void p(short[] t)      { p(Arrays.toString(t)); }
+	/** ï¿½ï¿½Ó¡ï¿½ï¿½ï¿½é²¢ï¿½ï¿½ï¿½ï¿½ */public static void p(int[] t)        { p(Arrays.toString(t)); }
+	/** ï¿½ï¿½Ó¡ï¿½ï¿½ï¿½é²¢ï¿½ï¿½ï¿½ï¿½ */public static void p(long[] t)       { p(Arrays.toString(t)); }
+	/** ï¿½ï¿½Ó¡ï¿½ï¿½ï¿½é²¢ï¿½ï¿½ï¿½ï¿½ */public static void p(double[] t)     { p(Arrays.toString(t)); }
+	/** ï¿½ï¿½Ó¡ï¿½ï¿½ï¿½é²¢ï¿½ï¿½ï¿½ï¿½ */public static void p(char[] t)       { p(Arrays.toString(t)); }
 	
 	/**
-	 * ´òÓ¡¶þÎ¬Êý×é
+	 * ï¿½ï¿½Ó¡ï¿½ï¿½Î¬ï¿½ï¿½ï¿½ï¿½
 	 * @param arr
 	 * @param fmt
 	 */
@@ -48,8 +48,22 @@ public class Out {
         }
 	}
 	
+   /**
+     * ï¿½ï¿½Ó¡ï¿½ï¿½Î¬ï¿½ï¿½ï¿½ï¿½
+     * @param arr
+     * @param fmt
+     */
+    public static <T> void p(T[][] arr, String fmt) {
+        for (T[] is : arr) {
+            for (T i : is) {
+                Out.pf(fmt, i);
+            }
+            Out.p();
+        }
+    }
+	
 	   /**
-     * ´òÓ¡¶þÎ¬Êý×é
+     * ï¿½ï¿½Ó¡ï¿½ï¿½Î¬ï¿½ï¿½ï¿½ï¿½
      * @param arr
      * @param fmt
      */
@@ -64,7 +78,7 @@ public class Out {
 	
 	
 	/**
-	 * ¸ñÊ½»¯Êä³ö
+	 * ï¿½ï¿½Ê½ï¿½ï¿½ï¿½ï¿½ï¿½
 	 * @param s
 	 * @param args
 	 */
@@ -73,7 +87,7 @@ public class Out {
 	}
 	
 	/**
-	 * Ö»´òÓ¡²»»»ÐÐ
+	 * Ö»ï¿½ï¿½Ó¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	 * @param t
 	 */
 	public static <T> void pt(T t) {
@@ -81,7 +95,7 @@ public class Out {
 	}
 	
 	/**
-	 * ´òÓ¡·Ö¸îÏß
+	 * ï¿½ï¿½Ó¡ï¿½Ö¸ï¿½ï¿½ï¿½
 	 * 
 	 */
 	public static void sep() {
@@ -89,7 +103,7 @@ public class Out {
 	}
 	
 	/**
-	 * ´òÓ¡·Ö¸îÏß
+	 * ï¿½ï¿½Ó¡ï¿½Ö¸ï¿½ï¿½ï¿½
 	 * @param size
 	 */
 	public static void sep(int size) {
