@@ -14,17 +14,17 @@ public class TimeUtil extends Date {
      */
     private static final long serialVersionUID = -5721385854718119819L;
     private static DateFormat dateFormat2 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss:SS");
-    private static DateFormat dateFormat1 = new SimpleDateFormat("yyyyÄêMMÔÂddÈÕ HHÊ±mm·ÖssÃëSS");
+    private static DateFormat dateFormat1 = new SimpleDateFormat("yyyyå¹´MMæœˆddæ—¥ HHæ—¶mmåˆ†ssç§’SS");
     
     /**
-     * ´´½¨ÈÕÆÚ¶ÔÏó
-     * @param yy    Äê·İ
-     * @param mm    ÔÂ·İ
-     * @param dd    ÈÕÆÚ
-     * @param hh    Ğ¡Ê±
-     * @param mi    ·ÖÖÓ
-     * @param ss    Ãë·Ö
-     * @param ms    ºÁÃë
+     * åˆ›å»ºæ—¥æœŸå¯¹è±¡
+     * @param yy    å¹´ä»½
+     * @param mm    æœˆä»½
+     * @param dd    æ—¥æœŸ
+     * @param hh    å°æ—¶
+     * @param mi    åˆ†é’Ÿ
+     * @param ss    ç§’åˆ†
+     * @param ms    æ¯«ç§’
      * @return
      */
     public static Date create(int yy, int mm, int dd, int hh, int mi, int ss, int ms) {
@@ -40,13 +40,13 @@ public class TimeUtil extends Date {
     }
     
     /**
-     * ´´½¨ÈÕÆÚ¶ÔÏó
-     * @param yy    Äê
-     * @param mm    ÔÂ
-     * @param dd    ÈÕ
-     * @param hh    Ê±
-     * @param mi    ·Ö
-     * @param ss    Ãë
+     * åˆ›å»ºæ—¥æœŸå¯¹è±¡
+     * @param yy    å¹´
+     * @param mm    æœˆ
+     * @param dd    æ—¥
+     * @param hh    æ—¶
+     * @param mi    åˆ†
+     * @param ss    ç§’
      * @return
      */
     public static Date create(int yy, int mm, int dd, int hh, int mi, int ss) {
@@ -54,10 +54,10 @@ public class TimeUtil extends Date {
     }
     
     /**
-     * ´´½¨ÈÕÆÚ¶ÔÏó
-     * @param yy    Äê
-     * @param mm    ÔÂ
-     * @param dd    ÈÕ
+     * åˆ›å»ºæ—¥æœŸå¯¹è±¡
+     * @param yy    å¹´
+     * @param mm    æœˆ
+     * @param dd    æ—¥
      * @return
      */
     public static Date create(int yy, int mm, int dd) {

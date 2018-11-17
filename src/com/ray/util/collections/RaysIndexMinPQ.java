@@ -5,9 +5,9 @@ import com.ray.io.Out;
 /**
  * 
 
- * ×îĞ¡ÓÅÏÈ¼¶¶ÓÁĞ<br/>
+ * æœ€å°ä¼˜å…ˆçº§é˜Ÿåˆ—<br/>
  * 
- * ÄÚ²¿Ê¹ÓÃÊı¾İ±íÊ¾µÄ¶ş²æÊ÷±£´æÊı¾İ£¬¶ş²æÊ÷ÊÇÎŞĞòµÄ£¬µ«ÊÇËùÓĞµÄ¸¸½ÚµãÒ»¶¨Ğ¡ÓÚÆä×Ó½Úµã£¬ËùÒÔ¸ù½ÚµãÊÇ×îĞ¡µÄÔªËØ<br/>
+ * å†…éƒ¨ä½¿ç”¨æ•°æ®è¡¨ç¤ºçš„äºŒå‰æ ‘ä¿å­˜æ•°æ®ï¼ŒäºŒå‰æ ‘æ˜¯æ— åºçš„ï¼Œä½†æ˜¯æ‰€æœ‰çš„çˆ¶èŠ‚ç‚¹ä¸€å®šå°äºå…¶å­èŠ‚ç‚¹ï¼Œæ‰€ä»¥æ ¹èŠ‚ç‚¹æ˜¯æœ€å°çš„å…ƒç´ <br/>
  * 
  * @author rays1
  *
@@ -15,10 +15,10 @@ import com.ray.io.Out;
  */
 public class RaysIndexMinPQ<Key extends Comparable<Key>> {
 
-    private int[] inner;            // ºÍ×îĞ¡ÓÅÏÈ¼¶¶ÓÁĞÀàËÆ£¬ÕâÀï±£´æµÄ²»ÊÇÔªËØ¶øÊÇÔªËØµÄË÷Òı
-    private int[] heapIndex;        // ´æ´¢ÔªËØË÷ÒıÔÚ¶ÑÖĞµÄÎ»ÖÃ  
-    private Key[] keys;             // Êµ¼Ê´æ´¢ÔªËØ
-    private int   cursor;           // ÓÎ±ê£¬ÎŞÔªËØÖ¸ÏòÎª0£¬ÓĞÔªËØºóÖ¸Ïò×îºóÒ»¸öÔªËØ
+    private int[] inner;            // å’Œæœ€å°ä¼˜å…ˆçº§é˜Ÿåˆ—ç±»ä¼¼ï¼Œè¿™é‡Œä¿å­˜çš„ä¸æ˜¯å…ƒç´ è€Œæ˜¯å…ƒç´ çš„ç´¢å¼•
+    private int[] heapIndex;        // å­˜å‚¨å…ƒç´ ç´¢å¼•åœ¨å †ä¸­çš„ä½ç½®  
+    private Key[] keys;             // å®é™…å­˜å‚¨å…ƒç´ 
+    private int   cursor;           // æ¸¸æ ‡ï¼Œæ— å…ƒç´ æŒ‡å‘ä¸º0ï¼Œæœ‰å…ƒç´ åæŒ‡å‘æœ€åä¸€ä¸ªå…ƒç´ 
     
     @SuppressWarnings("unchecked")
     public RaysIndexMinPQ(int capacity) {
@@ -34,7 +34,7 @@ public class RaysIndexMinPQ<Key extends Comparable<Key>> {
     }
 
     /**
-     * Îª¿ÕÅĞ¶Ï
+     * ä¸ºç©ºåˆ¤æ–­
      * @return
      */
     public boolean isEmpty() {
@@ -42,7 +42,7 @@ public class RaysIndexMinPQ<Key extends Comparable<Key>> {
     }
     
     /**
-     * ÊÇ·ñ°üº¬
+     * æ˜¯å¦åŒ…å«
      * @param i
      * @return
      */
@@ -51,7 +51,7 @@ public class RaysIndexMinPQ<Key extends Comparable<Key>> {
     }
     
     /**
-     * ³ß´ç
+     * å°ºå¯¸
      * @return
      */
     public int size() {
@@ -59,22 +59,22 @@ public class RaysIndexMinPQ<Key extends Comparable<Key>> {
     }
 
     /**
-     * ²åÈëÔªËØ
+     * æ’å…¥å…ƒç´ 
      * @param index
      * @param key
      */
     public void insert(int index, Key key) {
         cursor++;
 
-        keys[index] = key; // ĞÂÔªËØ·ÅÈëÄ©Î²
+        keys[index] = key; // æ–°å…ƒç´ æ”¾å…¥æœ«å°¾
         inner[cursor] = index;
         heapIndex[index] = cursor;
 
-        swim(cursor); // ¶ÔĞÂÔªËØÖ´ĞĞÉÏ¸¡
+        swim(cursor); // å¯¹æ–°å…ƒç´ æ‰§è¡Œä¸Šæµ®
     }
 
     /**
-     * »ñÈ¡×îĞ¡ÔªËØË÷Òı
+     * è·å–æœ€å°å…ƒç´ ç´¢å¼•
      * @return
      */
     public int minIndex() {
@@ -82,7 +82,7 @@ public class RaysIndexMinPQ<Key extends Comparable<Key>> {
     }
     
     /**
-     * »ñÈ¡×îĞ¡ÔªËØ
+     * è·å–æœ€å°å…ƒç´ 
      * @return
      */
     public Key minKey() {
@@ -91,7 +91,7 @@ public class RaysIndexMinPQ<Key extends Comparable<Key>> {
     }
 
     /**
-     * É¾³ı×îĞ¡ÔªËØ²¢·µ»ØË÷Òı
+     * åˆ é™¤æœ€å°å…ƒç´ å¹¶è¿”å›ç´¢å¼•
      * @return
      */
     public int delMin() {
@@ -103,7 +103,7 @@ public class RaysIndexMinPQ<Key extends Comparable<Key>> {
     }
     
     /**
-     * ¸ù¾İË÷Òı»ñÈ¡ÔªËØ
+     * æ ¹æ®ç´¢å¼•è·å–å…ƒç´ 
      * @param i
      * @return
      */
@@ -112,7 +112,7 @@ public class RaysIndexMinPQ<Key extends Comparable<Key>> {
     }
     
     /**
-     * ¸Ä±äË÷Òı¶ÔÓ¦ÔªËØ£¬¿ÉÄÜµ¼ÖÂ¶ş²æ¶ÑµÄ±ä»¯
+     * æ”¹å˜ç´¢å¼•å¯¹åº”å…ƒç´ ï¼Œå¯èƒ½å¯¼è‡´äºŒå‰å †çš„å˜åŒ–
      * @param i
      * @param key
      */
@@ -123,11 +123,11 @@ public class RaysIndexMinPQ<Key extends Comparable<Key>> {
     }
 
     /*********************
-     * (¸¨Öú·½·¨)ÉÏ¸¡
+     * (è¾…åŠ©æ–¹æ³•)ä¸Šæµ®
      *********************/
     private void swim(int index) {
         
-        // ²»¶ÏµÄÏòÉÏ±È¶Ô£¬Èç¹ûµ±Ç°½áµãÔªËØ±È¸¸½áµãĞ¡Ôò½»»»
+        // ä¸æ–­çš„å‘ä¸Šæ¯”å¯¹ï¼Œå¦‚æœå½“å‰ç»“ç‚¹å…ƒç´ æ¯”çˆ¶ç»“ç‚¹å°åˆ™äº¤æ¢
         while(index > 1 && less(index, index/2)) {
             swap(index, index/2);
             index = index/2;
@@ -136,10 +136,10 @@ public class RaysIndexMinPQ<Key extends Comparable<Key>> {
     }
 
     /*********************
-     * (¸¨Öú·½·¨)ÏÂ³Á
+     * (è¾…åŠ©æ–¹æ³•)ä¸‹æ²‰
      *********************/
     private void sink(int index) {
-        // ²»¶ÏµÄºÍ×Ó½ÚµãÖĞ½ÏĞ¡µÄ×Ó½Úµã½»»»
+        // ä¸æ–­çš„å’Œå­èŠ‚ç‚¹ä¸­è¾ƒå°çš„å­èŠ‚ç‚¹äº¤æ¢
         while (index * 2 <= cursor) {
             int childIndex = index*2;
             if(less(childIndex+1, childIndex)) childIndex ++;
@@ -153,23 +153,23 @@ public class RaysIndexMinPQ<Key extends Comparable<Key>> {
     }
     
     /*********************
-     * (¸¨Öú·½·¨)±È¶Ô
+     * (è¾…åŠ©æ–¹æ³•)æ¯”å¯¹
      *********************/
     private boolean less(int idx1, int idx2) {
         return keys[inner[idx1]].compareTo(keys[inner[idx2]]) < 0;
     }
     
     /*********************
-     * (¸¨Öú·½·¨)½»»»
+     * (è¾…åŠ©æ–¹æ³•)äº¤æ¢
      *********************/
     private void swap(int i, int j) {
         int temp = inner[i];
         inner[i] = inner[j];
         inner[j] = temp;
-        // ÕâÀïi¡¢jÊÇ¶ÑË÷Òı£¬ÔªËØË÷ÒıÎª inner[i], inner[j]
-        // Ô­±¾ heapIndex[inner[i]] = i
-        // Ô­±¾ heapIndex[inner[j]] = j
-        // ÔÚ inner[i] ºÍ inner[j] ½»»»Î»ÖÃºó£¬µÈÊ½²»ÄÜ³ÉÁ¢£¬ĞèÒªµ÷Õû heapIndex
+        // è¿™é‡Œiã€jæ˜¯å †ç´¢å¼•ï¼Œå…ƒç´ ç´¢å¼•ä¸º inner[i], inner[j]
+        // åŸæœ¬ heapIndex[inner[i]] = i
+        // åŸæœ¬ heapIndex[inner[j]] = j
+        // åœ¨ inner[i] å’Œ inner[j] äº¤æ¢ä½ç½®åï¼Œç­‰å¼ä¸èƒ½æˆç«‹ï¼Œéœ€è¦è°ƒæ•´ heapIndex
         heapIndex[inner[i]] = i;
         heapIndex[inner[j]] = j;
         

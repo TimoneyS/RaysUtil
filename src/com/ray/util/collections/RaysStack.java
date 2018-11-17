@@ -1,7 +1,7 @@
 package com.ray.util.collections;
 
 /**
- * ×Ô¶¨ÒåµÄÕ»ÀàĞÍ
+ * è‡ªå®šä¹‰çš„æ ˆç±»å‹
  * @author rays1
  *
  * @param <T>
@@ -17,7 +17,7 @@ public final class RaysStack<T> implements Stack<T> {
     }
     
     /**
-     * ÈëÕ»
+     * å…¥æ ˆ
      * @param element
      */
     public void push(T element) {
@@ -26,7 +26,7 @@ public final class RaysStack<T> implements Stack<T> {
     }
     
     /**
-     * Õ»ÊÇ·ñÎª¿Õ
+     * æ ˆæ˜¯å¦ä¸ºç©º
      * @return
      */
     public boolean isEmpty() {
@@ -34,7 +34,7 @@ public final class RaysStack<T> implements Stack<T> {
     }
     
     /**
-     * ³öÕ»
+     * å‡ºæ ˆ
      * @return
      */
     public T pop() {
@@ -47,7 +47,7 @@ public final class RaysStack<T> implements Stack<T> {
     }
     
     /**
-     * Õ»½Úµã
+     * æ ˆèŠ‚ç‚¹
      * @author rays1
      *
      * @param <T>

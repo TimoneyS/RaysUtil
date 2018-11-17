@@ -22,17 +22,17 @@ import javax.swing.KeyStroke;
 
 /**
  * 
- * �����ṩ���� RGB ��ɫģʽ�����ع��ɵ�ͼ�εķ�����Alpha Ŀǰ��֧�֡� ԭʼ��ͼƬ������ {@code PNG}, {@code GIF},
- * {@code JPEG} �ļ���ʹ����Ҳ���Դ���һ�����ļ��� ���������ͼƬչʾ�ڴ��ڵķ������ǽ�ͼƬ�������ļ���
+ * 该类提供操作 RGB 颜色模式的像素构成的图形的方法。Alpha 目前不支持。 原始的图片可以是 {@code PNG}, {@code GIF},
+ * {@code JPEG} 文件，使用者也可以创建一个空文件。 该类包含将图片展示在窗口的方法或是将图片保存至文件。
  * <p>
- * ���أ�<em>col</em>, <em>row</em>��col ��ʾ�����У�row ��ʾ�����С� Ĭ������£���ʼ���� ��0,0����ʾ���Ͻǣ� ����
- * {@link #setOriginLowerLeft()} ���Ըı���ʼ����Ϊ���½ǡ�
+ * 像素（<em>col</em>, <em>row</em>）col 表示所在列，row 表示所在行。 默认情况下，起始像素 （0,0）表示左上角， 方法
+ * {@link #setOriginLowerLeft()} 可以改变起始像素为左下角。
  * <p>
- * {@code get()} �� {@code set()} ������ {@link Color} ��������ȡ�������ض����ص���ɫ��
- * {@code getRGB()} �� {@code setRGB()} ������32λ��������������ɫ�Ӷ�����ֱ�Ӵ���{@code Color} ����.
- * ��(R)����(G)����(B)����ʹ����������Ҫ24λ��
+ * {@code get()} 和 {@code set()} 方法用 {@link Color} 对象来获取或设置特定像素的颜色。
+ * {@code getRGB()} 和 {@code setRGB()} 方法用32位的整形来编码颜色从而避免直接创建{@code Color} 对象.
+ * 红(R)，绿(G)，蓝(B)编码使用了至少需要24位。
  * <p>
- * ����һ��32λ�������ɫ������ʹ�����·�������ȡ RGB �ɷ� <blockquote>
+ * 给定一个32位编码的颜色，可以使用以下方法来获取 RGB 成分 <blockquote>
  * 
  * <pre>
  * int r = (rgb >> 16) & 0xFF;
@@ -40,7 +40,7 @@ import javax.swing.KeyStroke;
  * int b = (rgb >> 0) & 0xFF;
  * </pre>
  * 
- * </blockquote> ���� RGB �Ĺ��ɿ���ʹ�����·���������Ϊ 32 λ��ɫ <blockquote>
+ * </blockquote> 给定 RGB 的构成可以使用以下方法来编码为 32 位颜色 <blockquote>
  * 
  * <pre>
  * int rgb = (r << 16) + (g << 8) + (b << 0);
@@ -48,7 +48,7 @@ import javax.swing.KeyStroke;
  * 
  * </blockquote>
  * <p>
- * һ��<em>W</em>x<en>H</em> ��ͼ��ռ�� ~ 4 <em>W H</em> �ֽ��ڴ�,
+ * 一幅<em>W</em>x<en>H</em> 的图像占用 ~ 4 <em>W H</em> 字节内存,
  * 
  * @author Robert Sedgewick
  * @author Kevin Wayne
@@ -62,13 +62,13 @@ public final class Picture implements ActionListener {
     private final int     width, height;            // width and height
 
     /**
-     * ����һ�� {@code width}x{@code height} ��ͼ��{@code width} ��ʾ������ {@code height}
-     * ��ʾ������ÿ�����ض��Ǻ�ɫ��
+     * 创建一幅 {@code width}x{@code height} 的图像，{@code width} 表示列数， {@code height}
+     * 表示行数，每个像素都是黑色。
      * 
-     * @param ͼ�����
-     * @param ͼ��߶�
+     * @param 图像宽度
+     * @param 图像高度
      * @throws IllegalArgumentException
-     *             {@code width} �� {@code height} �Ǹ�ֵ
+     *             {@code width} 或 {@code height} 是负值
      */
     public Picture(int width, int height) {
         if (width < 0)
@@ -83,7 +83,7 @@ public final class Picture implements ActionListener {
     }
 
     /**
-     * �������ڲ��������ͼ������
+     * 创建基于参数传入的图像的深拷贝
      *
      * @param picture
      *            the picture to copy
@@ -105,7 +105,7 @@ public final class Picture implements ActionListener {
     }
 
     /**
-     * ��ĳ���ļ���Url��ȡ������ͼƬ
+     * 从某个文件或Url读取并创建图片
      *
      * @param filename
      *            the name of the file (.png, .gif, or .jpg) or URL.
@@ -147,7 +147,7 @@ public final class Picture implements ActionListener {
     }
 
     /**
-     * ͨ���ļ����󴴽�ͼ��
+     * 通过文件对象创建图像
      *
      * @param file
      *            the file
@@ -174,7 +174,7 @@ public final class Picture implements ActionListener {
     }
 
     /**
-     * ���ذ����˸�ͼ��� {@link JLabel}
+     * 返回包含了该图像的 {@link JLabel}
      *
      * @return the {@code JLabel}
      */
@@ -186,21 +186,21 @@ public final class Picture implements ActionListener {
     }
 
     /**
-     * ��ͼ����ʼ������Ϊ���Ϸ�
+     * 将图像起始点设置为右上方
      */
     public void setOriginUpperLeft() {
         isOriginUpperLeft = true;
     }
 
     /**
-     * ��ͼ����ʼ������Ϊ���·�
+     * 将图像起始点设置为右下方
      */
     public void setOriginLowerLeft() {
         isOriginUpperLeft = false;
     }
 
     /**
-     * �ڴ���չʾͼƬ
+     * 在窗口展示图片
      */
     public void show() {
 
@@ -235,7 +235,7 @@ public final class Picture implements ActionListener {
     }
 
     /**
-     * ����ͼ��ĸ߶�
+     * 返回图像的高度
      *
      * @return the height of the picture (in pixels)
      */
@@ -244,7 +244,7 @@ public final class Picture implements ActionListener {
     }
 
     /**
-     * ����ͼ�����
+     * 返回图像宽度
      *
      * @return the width of the picture (in pixels)
      */
@@ -263,7 +263,7 @@ public final class Picture implements ActionListener {
     }
 
     /**
-     * ����ָ�����ص���ɫ ({@code col}, {@code row}) ��װΪ {@link java.awt.Color}����
+     * 返回指定像素的颜色 ({@code col}, {@code row}) 包装为 {@link java.awt.Color}对象
      *
      * @param col
      *            the column index
@@ -282,7 +282,7 @@ public final class Picture implements ActionListener {
     }
 
     /**
-     * �������صı���Ϊ���͵���ɫ
+     * 返回像素的编码为整型的颜色
      */
     public int getRGB(int col, int row) {
         validateColumnIndex(col);
@@ -294,7 +294,7 @@ public final class Picture implements ActionListener {
     }
 
     /**
-     * ��������ɫ����Ϊָ������ɫ
+     * 将像素颜色设置为指定的颜色
      *
      * @param col
      *            the column index
@@ -318,7 +318,7 @@ public final class Picture implements ActionListener {
     }
 
     /**
-     * ��������ɫ����Ϊָ�������ͱ���
+     * 将像素颜色设置为指定的整型编码
      *
      * @param col
      *            the column index
@@ -340,7 +340,7 @@ public final class Picture implements ActionListener {
     }
 
     /**
-     * �ȶ�ͼƬ�Ƿ���ͬ
+     * 比对图片是否相同
      * @param other
      *            the other picture
      * @return {@code true} if this picture is the same dimension as
@@ -403,7 +403,7 @@ public final class Picture implements ActionListener {
     }
 
     /**
-     * ����ͼƬΪ��׼��ͼƬ��ʽ���ļ�
+     * 保存图片为标准的图片格式到文件
      *
      * @param filename
      *            the name of the file
@@ -417,7 +417,7 @@ public final class Picture implements ActionListener {
     }
 
     /**
-     * ����ͼƬΪ��׼��ͼƬ��ʽ���ļ�
+     * 保存图片为标准的图片格式到文件
      *
      * @param file
      *            the file

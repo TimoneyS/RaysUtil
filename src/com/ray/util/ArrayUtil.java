@@ -8,23 +8,23 @@ import com.ray.io.Out;
 public class ArrayUtil {
 	
 	/**
-     * ¼ì²éÊı×éÊÇ·ñÒÑ¾­ÅÅĞò
+     * æ£€æŸ¥æ•°ç»„æ˜¯å¦å·²ç»æ’åº
      * @param arr
      */
     public static void checkSorted(Comparable[] arr) {
-    	Out.pf("¾­¼ì²é£¬Êı×é%sÅÅĞò¡£\n", isSorted(arr) ? "ÒÑ" : "Î´");
+    	Out.pf("ç»æ£€æŸ¥ï¼Œæ•°ç»„%sæ’åºã€‚\n", isSorted(arr) ? "å·²" : "æœª");
     }
 	
 	   /**
-     * ¼ì²éÊı×é¾Ö²¿ÊÇ·ñÒÑ¾­ÅÅĞò
+     * æ£€æŸ¥æ•°ç»„å±€éƒ¨æ˜¯å¦å·²ç»æ’åº
      * @param arr
      */
     public static void checkSorted(Comparable[] arr, int lo, int hi) {
-        Out.pf("¾­¼ì²é£¬Êı×é%sÅÅĞò¡£\n", isSorted(arr, lo, hi) ? "ÒÑ" : "Î´");
+        Out.pf("ç»æ£€æŸ¥ï¼Œæ•°ç»„%sæ’åºã€‚\n", isSorted(arr, lo, hi) ? "å·²" : "æœª");
     }
     
     /**
-     * Êı×é×îĞ¡ÔªËØµÄË÷Òı
+     * æ•°ç»„æœ€å°å…ƒç´ çš„ç´¢å¼•
      * @param arr
      * @param i
      * @param j
@@ -34,7 +34,7 @@ public class ArrayUtil {
     }
 	
 	/**
-	 * Ä³Ò»ÇøÓòÄÚ×îĞ¡ÔªËØµÄË÷Òı
+	 * æŸä¸€åŒºåŸŸå†…æœ€å°å…ƒç´ çš„ç´¢å¼•
 	 * @param arr
 	 * @param i
 	 * @param j
@@ -48,7 +48,7 @@ public class ArrayUtil {
     }
 	
     /**
-     * Êı×é×îĞ¡ÔªËØµÄË÷Òı
+     * æ•°ç»„æœ€å°å…ƒç´ çš„ç´¢å¼•
      * @param arr
      * @param i
      * @param j
@@ -58,7 +58,7 @@ public class ArrayUtil {
     }
     
     /**
-     * Ä³Ò»ÇøÓòÄÚ×îĞ¡ÔªËØµÄË÷Òı
+     * æŸä¸€åŒºåŸŸå†…æœ€å°å…ƒç´ çš„ç´¢å¼•
      * @param arr
      * @param i
      * @param j
@@ -72,7 +72,7 @@ public class ArrayUtil {
     }
 	
 	/**
-     * »ñÈ¡ ÕûĞÎÊı×é
+     * è·å– æ•´å½¢æ•°ç»„
      * @param size
      * @return
      */
@@ -85,9 +85,9 @@ public class ArrayUtil {
     }
 
     /**
-	 * »ñÈ¡ÕûĞÎĞı×ªÊı×é£¬¿ÉÒÔÖ¸¶¨Ğı×ªµÄÎ»ÖÃ
-	 * @param size			Êı×é³ß´ç
-	 * @param deviation		Æ«ÒÆÁ¿
+	 * è·å–æ•´å½¢æ—‹è½¬æ•°ç»„ï¼Œå¯ä»¥æŒ‡å®šæ—‹è½¬çš„ä½ç½®
+	 * @param size			æ•°ç»„å°ºå¯¸
+	 * @param deviation		åç§»é‡
 	 * @return
 	 */
 	public static Integer[] intArrRotate(int size, int deviation) {
@@ -99,7 +99,7 @@ public class ArrayUtil {
 	}
 
     /**
-	 * »ñÈ¡ ÕûĞÎÊı×é
+	 * è·å– æ•´å½¢æ•°ç»„
 	 * @param size
 	 * @return
 	 */
@@ -112,7 +112,7 @@ public class ArrayUtil {
 	}
 	
     /**
-	 * ¼ì²éÊı×éÊÇ·ñÒÑ¾­ÅÅĞò
+	 * æ£€æŸ¥æ•°ç»„æ˜¯å¦å·²ç»æ’åº
 	 * @param arr
 	 * @return
 	 */
@@ -121,7 +121,7 @@ public class ArrayUtil {
 	}
 	
 	/**
-     * ¼ì²éÊı×é¾Ö²¿ÊÇ·ñÒÑ¾­ÅÅĞò
+     * æ£€æŸ¥æ•°ç»„å±€éƒ¨æ˜¯å¦å·²ç»æ’åº
      * @param arr
      * @return
      */
@@ -132,20 +132,20 @@ public class ArrayUtil {
     }
 	
     /**
-	 * ±È½ÏÊı×éÔªËØ
+	 * æ¯”è¾ƒæ•°ç»„å…ƒç´ 
 	 * @param arr
 	 * @param i
 	 * @param j
 	 * @return
-	 * true  Èç¹û arr[i] <  arr[j]<br>
-	 * false Èç¹û arr[i] >= arr[j]<br>
+	 * true  å¦‚æœ arr[i] <  arr[j]<br>
+	 * false å¦‚æœ arr[i] >= arr[j]<br>
 	 */
 	public static boolean less(Comparable[] arr, int i,  int j){
 		return arr[i].compareTo(arr[j]) < 0;
 	}	
 	
     /**
-     * ½«Ò»´®Êı×Ö±£´æÎªÊı×é
+     * å°†ä¸€ä¸²æ•°å­—ä¿å­˜ä¸ºæ•°ç»„
      * @return
      */
     public static int[] numberToArray(int num) {
@@ -159,14 +159,14 @@ public class ArrayUtil {
     }
 	
     /**
-     * ÖØĞÂµ÷ÕûÊı×éµÄ´óĞ¡,Ä¬ÈÏµ÷ÕûÎªÔ­Êı×éµÄÁ½±¶
+     * é‡æ–°è°ƒæ•´æ•°ç»„çš„å¤§å°,é»˜è®¤è°ƒæ•´ä¸ºåŸæ•°ç»„çš„ä¸¤å€
      * @param arr
      * @return
      */
     public static int[] resize(int[] arr) { return resize(arr, arr.length*2); }
     
     /**
-     * ÖØĞÂµ÷ÕûÊı¾İµÄ´óĞ¡
+     * é‡æ–°è°ƒæ•´æ•°æ®çš„å¤§å°
      * @param arr
      * @param newSize
      * @return
@@ -179,14 +179,14 @@ public class ArrayUtil {
     }
     
     /**
-     * ÖØĞÂµ÷ÕûÊı×éµÄ´óĞ¡,Ä¬ÈÏµ÷ÕûÎªÔ­Êı×éµÄÁ½±¶
+     * é‡æ–°è°ƒæ•´æ•°ç»„çš„å¤§å°,é»˜è®¤è°ƒæ•´ä¸ºåŸæ•°ç»„çš„ä¸¤å€
      * @param arr
      * @return
      */
     public static boolean[] resize(boolean[] arr) { return resize(arr, arr.length*2); }
     
     /**
-     * ÖØĞÂµ÷ÕûÊı¾İµÄ´óĞ¡
+     * é‡æ–°è°ƒæ•´æ•°æ®çš„å¤§å°
      * @param arr
      * @param newSize
      * @return
@@ -199,14 +199,14 @@ public class ArrayUtil {
     }
     
     /**
-     * ÖØĞÂµ÷ÕûÊı×éµÄ´óĞ¡,Ä¬ÈÏµ÷ÕûÎªÔ­Êı×éµÄÁ½±¶
+     * é‡æ–°è°ƒæ•´æ•°ç»„çš„å¤§å°,é»˜è®¤è°ƒæ•´ä¸ºåŸæ•°ç»„çš„ä¸¤å€
      * @param arr
      * @return
      */
     public static <T> T[] resize(T[] arr) { return resize(arr, arr.length*2); }
     
     /**
-     * ÖØĞÂµ÷ÕûÊı¾İµÄ´óĞ¡
+     * é‡æ–°è°ƒæ•´æ•°æ®çš„å¤§å°
      * @param arr
      * @param newSize
      * @return
@@ -219,7 +219,7 @@ public class ArrayUtil {
     }
     
     /**
-	 * ´òÂÒÊı×éË³Ğò
+	 * æ‰“ä¹±æ•°ç»„é¡ºåº
 	 * @param arr
 	 */
 	public static <T> void shuffle(T[] arr) {
@@ -227,7 +227,7 @@ public class ArrayUtil {
 	}
 	
 	/**
-     * ´òÂÒÊı×éË³Ğò
+     * æ‰“ä¹±æ•°ç»„é¡ºåº
      * @param arr
      */
     public static <T> void shuffle(T[] arr, int seed) {
@@ -237,7 +237,7 @@ public class ArrayUtil {
     }
 	
 	/**
-	 * ½»»»Êı×éÔªËØÎ»ÖÃ
+	 * äº¤æ¢æ•°ç»„å…ƒç´ ä½ç½®
 	 * @param arr
 	 * @param i
 	 * @param j
@@ -249,11 +249,11 @@ public class ArrayUtil {
 	}
 	
     /**
-	 * ½»»»Êı×éµÄÁ½¸öÇøÓò£¨ÒªÇóÁ½¸öÇøÓò±ØĞëÃ»ÓĞ½»¼¯£¬¶øÇÒ´óĞ¡Ò»ÖÂ£©
-	 * @param arr 	Êı×é
-	 * @param l1	ÇøÓò1¿ªÊ¼±ß½ç
-	 * @param l2	ÇøÓò2¿ªÊ¼±ß½ç
-	 * @param size	ÇøÓò´óĞ¡
+	 * äº¤æ¢æ•°ç»„çš„ä¸¤ä¸ªåŒºåŸŸï¼ˆè¦æ±‚ä¸¤ä¸ªåŒºåŸŸå¿…é¡»æ²¡æœ‰äº¤é›†ï¼Œè€Œä¸”å¤§å°ä¸€è‡´ï¼‰
+	 * @param arr 	æ•°ç»„
+	 * @param l1	åŒºåŸŸ1å¼€å§‹è¾¹ç•Œ
+	 * @param l2	åŒºåŸŸ2å¼€å§‹è¾¹ç•Œ
+	 * @param size	åŒºåŸŸå¤§å°
 	 */
 	public static <T> void swap(T[] arr,  int l1, int l2, int size) {
 		for (int i = 0; i < size; i ++)
@@ -261,7 +261,7 @@ public class ArrayUtil {
 	}
 	
     /**
-     * ½»»»Êı×éÔªËØÎ»ÖÃ
+     * äº¤æ¢æ•°ç»„å…ƒç´ ä½ç½®
      * @param arr
      * @param i
      * @param j
@@ -273,11 +273,11 @@ public class ArrayUtil {
     }
     
     /**
-     * ½»»»Êı×éµÄÁ½¸öÇøÓò£¨ÒªÇóÁ½¸öÇøÓò±ØĞëÃ»ÓĞ½»¼¯£¬¶øÇÒ´óĞ¡Ò»ÖÂ£©
-     * @param arr   Êı×é
-     * @param l1    ÇøÓò1¿ªÊ¼±ß½ç
-     * @param l2    ÇøÓò2¿ªÊ¼±ß½ç
-     * @param size  ÇøÓò´óĞ¡
+     * äº¤æ¢æ•°ç»„çš„ä¸¤ä¸ªåŒºåŸŸï¼ˆè¦æ±‚ä¸¤ä¸ªåŒºåŸŸå¿…é¡»æ²¡æœ‰äº¤é›†ï¼Œè€Œä¸”å¤§å°ä¸€è‡´ï¼‰
+     * @param arr   æ•°ç»„
+     * @param l1    åŒºåŸŸ1å¼€å§‹è¾¹ç•Œ
+     * @param l2    åŒºåŸŸ2å¼€å§‹è¾¹ç•Œ
+     * @param size  åŒºåŸŸå¤§å°
      */
     public static void swap(int[] arr,  int l1, int l2, int size) {
         for (int i = 0; i < size; i ++)
@@ -285,7 +285,7 @@ public class ArrayUtil {
     }
     
     /**
-     * ½»»»Êı×éÔªËØÎ»ÖÃ
+     * äº¤æ¢æ•°ç»„å…ƒç´ ä½ç½®
      * @param arr
      * @param i
      * @param j
@@ -297,11 +297,11 @@ public class ArrayUtil {
     }
     
     /**
-     * ½»»»Êı×éµÄÁ½¸öÇøÓò£¨ÒªÇóÁ½¸öÇøÓò±ØĞëÃ»ÓĞ½»¼¯£¬¶øÇÒ´óĞ¡Ò»ÖÂ£©
-     * @param arr   Êı×é
-     * @param l1    ÇøÓò1¿ªÊ¼±ß½ç
-     * @param l2    ÇøÓò2¿ªÊ¼±ß½ç
-     * @param size  ÇøÓò´óĞ¡
+     * äº¤æ¢æ•°ç»„çš„ä¸¤ä¸ªåŒºåŸŸï¼ˆè¦æ±‚ä¸¤ä¸ªåŒºåŸŸå¿…é¡»æ²¡æœ‰äº¤é›†ï¼Œè€Œä¸”å¤§å°ä¸€è‡´ï¼‰
+     * @param arr   æ•°ç»„
+     * @param l1    åŒºåŸŸ1å¼€å§‹è¾¹ç•Œ
+     * @param l2    åŒºåŸŸ2å¼€å§‹è¾¹ç•Œ
+     * @param size  åŒºåŸŸå¤§å°
      */
     public static void swap(boolean[] arr,  int l1, int l2, int size) {
         for (int i = 0; i < size; i ++)

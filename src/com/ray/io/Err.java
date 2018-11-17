@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class Err {
     
     /**
-     * ´òÓ¡²¢»»ĞĞ
+     * æ‰“å°å¹¶æ¢è¡Œ
      * @param t
      */
     public static <T> void p(T t) {
@@ -13,7 +13,7 @@ public class Err {
     }
     
     /**
-     * ´òÓ¡Êı×é²¢»»ĞĞ
+     * æ‰“å°æ•°ç»„å¹¶æ¢è¡Œ
      * @param t
      */
     public static <T> void p(T[] t)   { p(Arrays.toString(t)); }
@@ -22,7 +22,7 @@ public class Err {
     public static void p(long[] t)    { p(Arrays.toString(t)); }
     
     /**
-     * ¸ñÊ½»¯Êä³ö
+     * æ ¼å¼åŒ–è¾“å‡º
      * @param s
      * @param args
      */
@@ -31,7 +31,7 @@ public class Err {
     }
     
     /**
-     * Ö»´òÓ¡²»»»ĞĞ
+     * åªæ‰“å°ä¸æ¢è¡Œ
      * @param t
      */
     public static <T> void pt(T t) {
@@ -39,7 +39,7 @@ public class Err {
     }
     
     /**
-     * ´òÓ¡·Ö¸îÏß
+     * æ‰“å°åˆ†å‰²çº¿
      * 
      */
     public static void sep() {
@@ -47,7 +47,7 @@ public class Err {
     }
     
     /**
-     * ´òÓ¡·Ö¸îÏß
+     * æ‰“å°åˆ†å‰²çº¿
      * @param size
      */
     public static void sep(int size) {

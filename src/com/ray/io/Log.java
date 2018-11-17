@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.Date;
 
 /**
- * ×Ô½¨µÄ¼ò»¯±ê×¼Êä³öµÄ¸¨ÖúÀà
+ * è‡ªå»ºçš„ç®€åŒ–æ ‡å‡†è¾“å‡ºçš„è¾…åŠ©ç±»
  * @author Ray
  *
  */
@@ -14,7 +14,7 @@ public class Log {
     private static SimpleDateFormat dateFormater = new SimpleDateFormat("[yyyy-MM-dd hh:mm:ss:ms]");
     
 	/**
-	 * ´òÓ¡²¢»»ĞĞ
+	 * æ‰“å°å¹¶æ¢è¡Œ
 	 * @param t
 	 */
 	public static <T> void p(T t) {
@@ -22,7 +22,7 @@ public class Log {
 	}
 	
 	/**
-	 * ´òÓ¡Êı×é²¢»»ĞĞ
+	 * æ‰“å°æ•°ç»„å¹¶æ¢è¡Œ
 	 * @param t
 	 */
 	public static <T> void p(T[] t)   { p(Arrays.toString(t)); }
@@ -31,7 +31,7 @@ public class Log {
     public static void p(long[] t)    { p(Arrays.toString(t)); }
 	
 	/**
-	 * ¸ñÊ½»¯Êä³ö
+	 * æ ¼å¼åŒ–è¾“å‡º
 	 * @param s
 	 * @param args
 	 */
@@ -40,7 +40,7 @@ public class Log {
 	}
 	
 	/**
-	 * Ö»´òÓ¡²»»»ĞĞ
+	 * åªæ‰“å°ä¸æ¢è¡Œ
 	 * @param t
 	 */
 	public static <T> void pt(T t) {
@@ -48,7 +48,7 @@ public class Log {
 	}
 	
 	/**
-	 * ´òÓ¡´íÎó
+	 * æ‰“å°é”™è¯¯
 	 * @param t
 	 */
 	public static <T> void err(T t) {
@@ -56,7 +56,7 @@ public class Log {
 	}
 	
 	/**
-	 * ´òÓ¡·Ö¸îÏß
+	 * æ‰“å°åˆ†å‰²çº¿
 	 * 
 	 */
 	public static void sep() {
@@ -64,7 +64,7 @@ public class Log {
 	}
 	
 	/**
-	 * ´òÓ¡·Ö¸îÏß
+	 * æ‰“å°åˆ†å‰²çº¿
 	 * @param size
 	 */
 	public static void sep(int size) {

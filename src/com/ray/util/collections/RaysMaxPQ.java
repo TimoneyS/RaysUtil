@@ -5,7 +5,7 @@ import java.util.Random;
 import com.ray.util.Timer;
 
 /**
- * ¸öÈËÊµÏÖµÄ×î´óÓÅÏÈ¼¶¶ÓÁĞ
+ * ä¸ªäººå®ç°çš„æœ€å¤§ä¼˜å…ˆçº§é˜Ÿåˆ—
  * @author rays1
  *
  * @param <Key>
@@ -25,8 +25,8 @@ public class RaysMaxPQ<Key extends Comparable<Key>> implements MaxPQ<Key> {
     @Override
     public void insert(Key key) {
         resize();
-        inner[++cursor] = key;  // ĞÂÔªËØ·ÅÈëÄ©Î²
-        swim(cursor);           // ¶ÔĞÂÔªËØÖ´ĞĞÉÏ¸¡
+        inner[++cursor] = key;  // æ–°å…ƒç´ æ”¾å…¥æœ«å°¾
+        swim(cursor);           // å¯¹æ–°å…ƒç´ æ‰§è¡Œä¸Šæµ®
     }
 
     @Override
@@ -64,39 +64,39 @@ public class RaysMaxPQ<Key extends Comparable<Key>> implements MaxPQ<Key> {
         return cursor;
     }
     
-    private Key[] inner;            // ÄÚ²¿Êı×é£¬±£´æ¶ş²æÊ÷
-    private int   cursor;           // ÓÎ±ê£¬ÎŞÔªËØÖ¸ÏòÎª0£¬ÓĞÔªËØºóÖ¸Ïò×îºóÒ»¸öÔªËØ
+    private Key[] inner;            // å†…éƒ¨æ•°ç»„ï¼Œä¿å­˜äºŒå‰æ ‘
+    private int   cursor;           // æ¸¸æ ‡ï¼Œæ— å…ƒç´ æŒ‡å‘ä¸º0ï¼Œæœ‰å…ƒç´ åæŒ‡å‘æœ€åä¸€ä¸ªå…ƒç´ 
     
     /**************************************
-     * (¸¨Öú·½·¨)ÉÏ¸¡²Ù×÷
+     * (è¾…åŠ©æ–¹æ³•)ä¸Šæµ®æ“ä½œ
      * @param index
      **************************************/
     private void swim(int index) {
-        while(index > 1 && less(index/2, index)) {     // Î´µ½´ï¸ù½Úµã»òÕß¸¸½ÚµãµÄÔªËØ±Èµ±Ç°ÔªËØĞ¡
-            swap(index, index/2);                      // ½»»»µ±Ç°ÔªËØºÍÆä¸¸½Úµã
-            index/=2;                                         // µ±Ç°ÔªËØË÷ÒıĞŞÕı
+        while(index > 1 && less(index/2, index)) {     // æœªåˆ°è¾¾æ ¹èŠ‚ç‚¹æˆ–è€…çˆ¶èŠ‚ç‚¹çš„å…ƒç´ æ¯”å½“å‰å…ƒç´ å°
+            swap(index, index/2);                      // äº¤æ¢å½“å‰å…ƒç´ å’Œå…¶çˆ¶èŠ‚ç‚¹
+            index/=2;                                         // å½“å‰å…ƒç´ ç´¢å¼•ä¿®æ­£
         }
     }
     
     /**************************************
-     * (¸¨Öú·½·¨)ÏÂ³Á²Ù×÷
+     * (è¾…åŠ©æ–¹æ³•)ä¸‹æ²‰æ“ä½œ
      * @param index
      **************************************/
     private void sink(int index) {
-        while (index * 2 <= cursor) {                                 // µ±Ç°Ë÷ÒıÎ´³¬¹ı±ß½ç
-            int childIndex = index*2;                                 // ×Ó½ÚµãË÷Òı
-            if(less(childIndex, childIndex+1)) childIndex ++;         // Ñ¡È¡½Ï´óµÄ×Ó½ÚµãµÄË÷Òı
-            if(less(index, childIndex)) {                             // ×Ó½Úµã¸ü´ó
+        while (index * 2 <= cursor) {                                 // å½“å‰ç´¢å¼•æœªè¶…è¿‡è¾¹ç•Œ
+            int childIndex = index*2;                                 // å­èŠ‚ç‚¹ç´¢å¼•
+            if(less(childIndex, childIndex+1)) childIndex ++;         // é€‰å–è¾ƒå¤§çš„å­èŠ‚ç‚¹çš„ç´¢å¼•
+            if(less(index, childIndex)) {                             // å­èŠ‚ç‚¹æ›´å¤§
                 swap(index, childIndex);                      
                 index = childIndex;
-            } else {                                                  // µ±Ç°ÔªËØ´óÓÚ×Ó½Úµã
+            } else {                                                  // å½“å‰å…ƒç´ å¤§äºå­èŠ‚ç‚¹
                 break;
             }
         }
     }
     
     /*********************
-     * (¸¨Öú·½·¨)±È¶Ô
+     * (è¾…åŠ©æ–¹æ³•)æ¯”å¯¹
      *********************/
     private boolean less(int a, int b) {
         
@@ -104,7 +104,7 @@ public class RaysMaxPQ<Key extends Comparable<Key>> implements MaxPQ<Key> {
     }
     
     /*********************
-     * (¸¨Öú·½·¨)½»»»
+     * (è¾…åŠ©æ–¹æ³•)äº¤æ¢
      *********************/
     private void swap(int i, int j) {
         Key temp = inner[i];

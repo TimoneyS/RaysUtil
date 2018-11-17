@@ -2,7 +2,7 @@ package com.ray.util.collections;
 
 /**
  * 
- * ×îĞ¡ÓÅÏÈ¼¶¶ÓÁĞ
+ * æœ€å°ä¼˜å…ˆçº§é˜Ÿåˆ—
  * @author rays1
  *
  * @param <Key>
@@ -11,37 +11,37 @@ package com.ray.util.collections;
 public interface MinPQ<Key extends Comparable<Key>> {
 
     /**
-     * ²åÈëÔªËØ
+     * æ’å…¥å…ƒç´ 
      * @param key
      */
     void insert(Key key);
 
     /**
-     * »ñÈ¡×îĞ¡ÔªËØ
+     * è·å–æœ€å°å…ƒç´ 
      * @return
      */
     Key min();
 
     /**
-     * É¾³ı×îĞ¡ÔªËØ
+     * åˆ é™¤æœ€å°å…ƒç´ 
      * @return
      */
     Key delMin();
 
     /**
-     * ¶ÓÁĞÊÇ·ñÎª¿Õ
+     * é˜Ÿåˆ—æ˜¯å¦ä¸ºç©º
      * @return
      */
     boolean isEmpty();
 
     /**
-     * ¶ÓÁĞÖĞÔªËØ¸öÊı
+     * é˜Ÿåˆ—ä¸­å…ƒç´ ä¸ªæ•°
      * @return
      */
     int size();
 
     /**
-     * ¼ì²âÊÇ·ñ°üº¬
+     * æ£€æµ‹æ˜¯å¦åŒ…å«
      * @param key
      * @return
      */

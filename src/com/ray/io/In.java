@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class In {
     
     /**
-     * 获取类路径下的资源url
+     * 鑾峰彇绫昏矾寰勪笅鐨勮祫婧恥rl
      * @param res
      * @return
      */
@@ -17,7 +17,7 @@ public class In {
     }
     
     /**
-     * 获取指定类的路径的资源url
+     * 鑾峰彇鎸囧畾绫荤殑璺緞鐨勮祫婧恥rl
      * @param cls
      * @param res
      * @return
@@ -30,7 +30,7 @@ public class In {
     }
     
     /**
-     * 从工程目录获取Scanner
+     * 浠庡伐绋嬬洰褰曡幏鍙朣canner
      * @param res
      * @return
      */
@@ -45,7 +45,7 @@ public class In {
     }
     
     /**
-     * 从类路径获取资源的Scanner
+     * 浠庣被璺緞鑾峰彇璧勬簮鐨凷canner
      * @param res
      * @return
      */
@@ -61,7 +61,7 @@ public class In {
     }
     
     /**
-     * 类路径的指定类所在的包下获取资源的Scanner
+     * 绫昏矾寰勭殑鎸囧畾绫绘墍鍦ㄧ殑鍖呬笅鑾峰彇璧勬簮鐨凷canner
      * @param cl
      * @param res
      * @return

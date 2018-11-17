@@ -3,31 +3,31 @@ package com.ray.util.collections;
 public interface MaxPQ<Key extends Comparable<Key>> {
     
     /**
-     * ²åÈëÔªËØ
+     * æ’å…¥å…ƒç´ 
      * @param key
      */
     void insert(Key key);
     
     /**
-     * »ñÈ¡×î´óÔªËØ
+     * è·å–æœ€å¤§å…ƒç´ 
      * @return
      */
     Key max();
     
     /**
-     * É¾³ı×î´óÔªËØ
+     * åˆ é™¤æœ€å¤§å…ƒç´ 
      * @return
      */
     Key delMax();
     
     /**
-     * ¶ÓÁĞÊÇ·ñÎª¿Õ
+     * é˜Ÿåˆ—æ˜¯å¦ä¸ºç©º
      * @return
      */
     boolean isEmpty();
     
     /**
-     * ¶ÓÁĞÖĞÔªËØ¸öÊı
+     * é˜Ÿåˆ—ä¸­å…ƒç´ ä¸ªæ•°
      * @return
      */
     int size();

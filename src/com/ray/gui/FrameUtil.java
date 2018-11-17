@@ -19,10 +19,10 @@ public class FrameUtil {
     }
     
     /**
-     * Ë¢ÐÂ Frame
+     * åˆ·æ–° Frame
      */
     public static void refreshFrame(JFrame frame, int delay, TimeUnit unit) {
-        // Ô¤¶©Ë¢ÐÂ
+        // é¢„è®¢åˆ·æ–°
         Executors
         .newSingleThreadScheduledExecutor()
         .scheduleWithFixedDelay(

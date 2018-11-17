@@ -7,7 +7,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import com.ray.io.Out;
 
 /**
- * ¼ÆÊ±Æ÷Àà
+ * è®¡æ—¶å™¨ç±»
  * @author Ray
  *
  */
@@ -21,7 +21,7 @@ public class Timer {
     private long[] dateArr = new long[2];
 
     /**
-	 * Ê±¼ä´Á
+	 * æ—¶é—´æˆ³
 	 */
 	public static String tag() {
         return DATE_FORMATTER.format(new Date());
@@ -42,8 +42,8 @@ public class Timer {
     }
 	
 	/**
-     * "°´ÏÂ" ¼ÆÊ±Æ÷<br/>
-     * µÚÒ»´Î°´ÏÂ ¿ªÊ¼¼ÇÂ¼Ê±¼ä£¬Ö®ºóÃ¿´Î°´ÏÂ½«ÏÔÊ¾¾àÀëÉÏÒ»´ÎµÄÊ±¼ä£¬²¢¿ªÊ¼ÏÂÒ»´Î¼ÆÊ±
+     * "æŒ‰ä¸‹" è®¡æ—¶å™¨<br/>
+     * ç¬¬ä¸€æ¬¡æŒ‰ä¸‹ å¼€å§‹è®°å½•æ—¶é—´ï¼Œä¹‹åæ¯æ¬¡æŒ‰ä¸‹å°†æ˜¾ç¤ºè·ç¦»ä¸Šä¸€æ¬¡çš„æ—¶é—´ï¼Œå¹¶å¼€å§‹ä¸‹ä¸€æ¬¡è®¡æ—¶
      */
 	public void click() {
         adjustDateArray();
@@ -51,7 +51,7 @@ public class Timer {
 	}
 	
     /**
-     * "Í£Ö¹" ¼ÆÊ±Æ÷
+     * "åœæ­¢" è®¡æ—¶å™¨
      */
     public void stop() {
         click();
@@ -60,16 +60,16 @@ public class Timer {
     }
     
     /**
-     * "ÏÔÊ¾" ¼ÆÊ±Æ÷½á¹û
+     * "æ˜¾ç¤º" è®¡æ—¶å™¨ç»“æœ
      */
     public void show() {
        for (int i = 1; i < record_count; i++) {
-           Out.pf("[%s]µÚ%2d´ÎºÄÊ± %s ms\n", name, i, dateArr[i] - dateArr[i-1]);
+           Out.pf("[%s]ç¬¬%2dæ¬¡è€—æ—¶ %s ms\n", name, i, dateArr[i] - dateArr[i-1]);
        } 
     }
     
     /**
-     * µ÷ÕûÊı×é
+     * è°ƒæ•´æ•°ç»„
      */
     private void adjustDateArray() {
         if (record_count+1 >= dateArr.length) {

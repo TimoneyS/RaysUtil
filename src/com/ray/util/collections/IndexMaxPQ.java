@@ -18,7 +18,7 @@ import java.util.NoSuchElementException;
  *  operations, along with <em>delete</em> and <em>change-the-key</em> 
  *  methods. In order to let the client refer to items on the priority queue,
  *  an integer between {@code 0} and {@code maxN - 1}
- *  is associated with each key—the client
+ *  is associated with each key鈥攖he client
  *  uses this integer to specify which key to delete or change.
  *  It also supports methods for peeking at a maximum key,
  *  testing if the priority queue is empty, and iterating through

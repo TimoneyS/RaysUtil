@@ -1,14 +1,14 @@
 package com.ray.util;
 
 /**
- * ×Ö·û´®¸¨Öú¹¤¾ß
+ * å­—ç¬¦ä¸²è¾…åŠ©å·¥å…·
  * @author rays1
  *
  */
 public class StringUtil {
     
     /**
-     * ½«×Ö·û´®ÖØ¸´n´Î
+     * å°†å­—ç¬¦ä¸²é‡å¤næ¬¡
      * @param s
      * @param times
      * @return
@@ -21,7 +21,7 @@ public class StringUtil {
     }
     
     /**
-     * ½«×Ö·ûÖØ¸´n´Î
+     * å°†å­—ç¬¦é‡å¤næ¬¡
      * @param c
      * @param times
      * @return

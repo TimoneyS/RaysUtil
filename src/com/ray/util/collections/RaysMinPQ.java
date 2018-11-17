@@ -3,9 +3,9 @@ package com.ray.util.collections;
 /**
  * 
 
- * ×îĞ¡ÓÅÏÈ¼¶¶ÓÁĞ<br/>
+ * æœ€å°ä¼˜å…ˆçº§é˜Ÿåˆ—<br/>
  * 
- * ÄÚ²¿Ê¹ÓÃÊı¾İ±íÊ¾µÄ¶ş²æÊ÷±£´æÊı¾İ£¬¶ş²æÊ÷ÊÇÎŞĞòµÄ£¬µ«ÊÇËùÓĞµÄ¸¸½ÚµãÒ»¶¨Ğ¡ÓÚÆä×Ó½Úµã£¬ËùÒÔ¸ù½ÚµãÊÇ×îĞ¡µÄÔªËØ<br/>
+ * å†…éƒ¨ä½¿ç”¨æ•°æ®è¡¨ç¤ºçš„äºŒå‰æ ‘ä¿å­˜æ•°æ®ï¼ŒäºŒå‰æ ‘æ˜¯æ— åºçš„ï¼Œä½†æ˜¯æ‰€æœ‰çš„çˆ¶èŠ‚ç‚¹ä¸€å®šå°äºå…¶å­èŠ‚ç‚¹ï¼Œæ‰€ä»¥æ ¹èŠ‚ç‚¹æ˜¯æœ€å°çš„å…ƒç´ <br/>
  * 
  *              1
  *           /     \
@@ -19,8 +19,8 @@ package com.ray.util.collections;
  */
 public class RaysMinPQ<Key extends Comparable<Key>> implements MinPQ<Key> {
 
-    private Key[] inner;            // ÄÚ²¿Êı×é£¬±£´æ¶ş²æÊ÷
-    private int   cursor;           // ÓÎ±ê£¬ÎŞÔªËØÖ¸ÏòÎª0£¬ÓĞÔªËØºóÖ¸Ïò×îºóÒ»¸öÔªËØ
+    private Key[] inner;            // å†…éƒ¨æ•°ç»„ï¼Œä¿å­˜äºŒå‰æ ‘
+    private int   cursor;           // æ¸¸æ ‡ï¼Œæ— å…ƒç´ æŒ‡å‘ä¸º0ï¼Œæœ‰å…ƒç´ åæŒ‡å‘æœ€åä¸€ä¸ªå…ƒç´ 
 
     public RaysMinPQ() {
         this(1);
@@ -35,8 +35,8 @@ public class RaysMinPQ<Key extends Comparable<Key>> implements MinPQ<Key> {
     @Override
     public void insert(Key key) {
         resize();
-        inner[++cursor] = key;  // ĞÂÔªËØ·ÅÈëÄ©Î²
-        swim(cursor);           // ¶ÔĞÂÔªËØÖ´ĞĞÉÏ¸¡
+        inner[++cursor] = key;  // æ–°å…ƒç´ æ”¾å…¥æœ«å°¾
+        swim(cursor);           // å¯¹æ–°å…ƒç´ æ‰§è¡Œä¸Šæµ®
     }
 
     @Override
@@ -75,7 +75,7 @@ public class RaysMinPQ<Key extends Comparable<Key>> implements MinPQ<Key> {
     }
 
     /*********************
-     * (¸¨Öú·½·¨)µ÷ÕûÊı×é³ß´ç
+     * (è¾…åŠ©æ–¹æ³•)è°ƒæ•´æ•°ç»„å°ºå¯¸
      *********************/
     @SuppressWarnings("unchecked")
     private void resize() {
@@ -89,10 +89,10 @@ public class RaysMinPQ<Key extends Comparable<Key>> implements MinPQ<Key> {
     }
 
     /*********************
-     * (¸¨Öú·½·¨)ÉÏ¸¡
+     * (è¾…åŠ©æ–¹æ³•)ä¸Šæµ®
      *********************/
     private void swim(int index) {
-        // ²»¶ÏµÄÏòÉÏ±È¶Ô£¬Èç¹ûµ±Ç°½áµãÔªËØ±È¸¸½áµãĞ¡Ôò½»»»
+        // ä¸æ–­çš„å‘ä¸Šæ¯”å¯¹ï¼Œå¦‚æœå½“å‰ç»“ç‚¹å…ƒç´ æ¯”çˆ¶ç»“ç‚¹å°åˆ™äº¤æ¢
         while(index > 1 && less(index, index/2)) {
             swap(index, index/2);
             index = index/2;
@@ -100,10 +100,10 @@ public class RaysMinPQ<Key extends Comparable<Key>> implements MinPQ<Key> {
     }
 
     /*********************
-     * (¸¨Öú·½·¨)ÏÂ³Á
+     * (è¾…åŠ©æ–¹æ³•)ä¸‹æ²‰
      *********************/
     private void sink(int index) {
-        // ²»¶ÏµÄºÍ×Ó½ÚµãÖĞ½ÏĞ¡µÄ×Ó½Úµã½»»»
+        // ä¸æ–­çš„å’Œå­èŠ‚ç‚¹ä¸­è¾ƒå°çš„å­èŠ‚ç‚¹äº¤æ¢
         while (index * 2 <= cursor) {
             int childIndex = index*2;
             if(less(childIndex+1, childIndex)) childIndex ++;
@@ -117,7 +117,7 @@ public class RaysMinPQ<Key extends Comparable<Key>> implements MinPQ<Key> {
     }
     
     /*********************
-     * (¸¨Öú·½·¨)±È¶Ô
+     * (è¾…åŠ©æ–¹æ³•)æ¯”å¯¹
      *********************/
     private boolean less(int a, int b) {
         
@@ -125,7 +125,7 @@ public class RaysMinPQ<Key extends Comparable<Key>> implements MinPQ<Key> {
     }
     
     /*********************
-     * (¸¨Öú·½·¨)½»»»
+     * (è¾…åŠ©æ–¹æ³•)äº¤æ¢
      *********************/
     private void swap(int i, int j) {
         Key temp = inner[i];

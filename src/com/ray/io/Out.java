@@ -3,14 +3,14 @@ package com.ray.io;
 import java.util.Arrays;
 
 /**
- * �Խ��ļ򻯱�׼����ĸ�����
+ * 锟皆斤拷锟侥简化憋拷准锟斤拷锟斤拷母锟斤拷锟斤拷锟�
  * @author Ray
  *
  */
 public class Out {
     
     /**
-     * ��ӡ������
+     * 锟斤拷印锟斤拷锟斤拷锟斤拷
      * @param t
      */
     public static <T> void p() {
@@ -18,7 +18,7 @@ public class Out {
     }
 	
 	/**
-	 * ��ӡ������
+	 * 锟斤拷印锟斤拷锟斤拷锟斤拷
 	 * @param t
 	 */
 	public static <T> void p(T t) {
@@ -26,16 +26,16 @@ public class Out {
 	}
 	
 	
-	/** ��ӡ���鲢���� */public static <T> void p(T[] t)      { p(Arrays.toString(t)); }
-	/** ��ӡ���鲢���� */public static void p(boolean[] t)    { p(Arrays.toString(t)); }
-	/** ��ӡ���鲢���� */public static void p(short[] t)      { p(Arrays.toString(t)); }
-	/** ��ӡ���鲢���� */public static void p(int[] t)        { p(Arrays.toString(t)); }
-	/** ��ӡ���鲢���� */public static void p(long[] t)       { p(Arrays.toString(t)); }
-	/** ��ӡ���鲢���� */public static void p(double[] t)     { p(Arrays.toString(t)); }
-	/** ��ӡ���鲢���� */public static void p(char[] t)       { p(Arrays.toString(t)); }
+	/** 锟斤拷印锟斤拷锟介并锟斤拷锟斤拷 */public static <T> void p(T[] t)      { p(Arrays.toString(t)); }
+	/** 锟斤拷印锟斤拷锟介并锟斤拷锟斤拷 */public static void p(boolean[] t)    { p(Arrays.toString(t)); }
+	/** 锟斤拷印锟斤拷锟介并锟斤拷锟斤拷 */public static void p(short[] t)      { p(Arrays.toString(t)); }
+	/** 锟斤拷印锟斤拷锟介并锟斤拷锟斤拷 */public static void p(int[] t)        { p(Arrays.toString(t)); }
+	/** 锟斤拷印锟斤拷锟介并锟斤拷锟斤拷 */public static void p(long[] t)       { p(Arrays.toString(t)); }
+	/** 锟斤拷印锟斤拷锟介并锟斤拷锟斤拷 */public static void p(double[] t)     { p(Arrays.toString(t)); }
+	/** 锟斤拷印锟斤拷锟介并锟斤拷锟斤拷 */public static void p(char[] t)       { p(Arrays.toString(t)); }
 	
 	/**
-	 * ��ӡ��ά����
+	 * 锟斤拷印锟斤拷维锟斤拷锟斤拷
 	 * @param arr
 	 * @param fmt
 	 */
@@ -49,7 +49,7 @@ public class Out {
 	}
 	
    /**
-     * ��ӡ��ά����
+     * 锟斤拷印锟斤拷维锟斤拷锟斤拷
      * @param arr
      * @param fmt
      */
@@ -63,7 +63,7 @@ public class Out {
     }
 	
 	   /**
-     * ��ӡ��ά����
+     * 锟斤拷印锟斤拷维锟斤拷锟斤拷
      * @param arr
      * @param fmt
      */
@@ -78,7 +78,7 @@ public class Out {
 	
 	
 	/**
-	 * ��ʽ�����
+	 * 锟斤拷式锟斤拷锟斤拷锟�
 	 * @param s
 	 * @param args
 	 */
@@ -87,7 +87,7 @@ public class Out {
 	}
 	
 	/**
-	 * ֻ��ӡ������
+	 * 只锟斤拷印锟斤拷锟斤拷锟斤拷
 	 * @param t
 	 */
 	public static <T> void pt(T t) {
@@ -95,7 +95,7 @@ public class Out {
 	}
 	
 	/**
-	 * ��ӡ�ָ���
+	 * 锟斤拷印锟街革拷锟斤拷
 	 * 
 	 */
 	public static void sep() {
@@ -103,7 +103,7 @@ public class Out {
 	}
 	
 	/**
-	 * ��ӡ�ָ���
+	 * 锟斤拷印锟街革拷锟斤拷
 	 * @param size
 	 */
 	public static void sep(int size) {
