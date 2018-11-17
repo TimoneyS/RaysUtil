@@ -9,23 +9,27 @@ public class Math {
     public static List<Integer> permutation(int[] nums) {
         Arrays.sort(nums);
         List<Integer> rs = new ArrayList<Integer>();
-        permutation(rs, new ArrayList<Integer>(), nums, 0);
+        permutation(rs, 0, nums);
         return rs;
     }
     
-    public static void permutation(List<Integer> list, List<Integer> ignore, int[] nums, int sum) {
-        if (nums.length - ignore.size() == 1) {
-            for (int i : nums)
-                if (!ignore.contains(i)) list.add(sum*10+i);
+    public static void permutation(List<Integer> rs, int base, int[] nums) {
+        
+        if (nums.length == 0) {
+            rs.add(base);
             return;
         }
         
-        for (int i : nums) {
-            if (!ignore.contains(i)) {
-                ignore.add(i);
-                permutation(list, ignore, nums, sum*10 + i);
-                ignore.remove((Integer)i);
+        for (int i = 0; i < nums.length; i++) {
+            int[] newNums = new int[nums.length - 1];
+            
+            for (int j = 0; j < newNums.length; j++) {
+                if (j < i)
+                    newNums[j] = nums[i];
+                else
+                    newNums[j] = nums[i+1];
             }
+            permutation(rs, base*10 + nums[i], newNums);
         }
         
     }
