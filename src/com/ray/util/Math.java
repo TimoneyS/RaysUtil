@@ -1,15 +1,15 @@
 package com.ray.util;
 
+import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.LinkedList;
 import java.util.List;
 
 public class Math {
     
     public static List<Integer> permutation(int[] nums) {
         Arrays.sort(nums);
-        List<Integer> rs = new LinkedList<Integer>();
-        permutation(rs, new LinkedList<Integer>(), nums, 0);
+        List<Integer> rs = new ArrayList<Integer>();
+        permutation(rs, new ArrayList<Integer>(), nums, 0);
         return rs;
     }
     
