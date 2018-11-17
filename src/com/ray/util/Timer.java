@@ -18,7 +18,7 @@ public class Timer {
 	
 	private String name;
     private int record_count = 0;
-    private long[] dateArr = new long[2];
+    private long[] dateArr = new long[16];
 
     /**
 	 * 时间戳
