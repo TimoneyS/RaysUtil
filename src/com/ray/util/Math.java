@@ -35,12 +35,10 @@ public class Math {
         List<Integer> rs;
         
         int size = 10;
-        Timer t = Timer.create();
-        
-        t.click();
+        Timer.CLICK();
         rs = permutation(ArrayUtil.intArr(size));
-        t.click();        
-        t.show();
+        Timer.STOP();
+        
     }
 
 }

@@ -118,15 +118,13 @@ public class RaysMaxPQ<Key extends Comparable<Key>> implements MaxPQ<Key> {
         int size = 2000000;
         Random r = new Random(42);
         
-        Timer t = Timer.create();
-        
-        t.click();
+        Timer.CLICK();
         for (int i = 0; i < size; i++) {
             pq.insert(r.nextInt(size * 10));
         }
-        t.click();
+        Timer.CLICK();
         pq.delMax();
-        t.stop();
+        Timer.STOP();
         
     }
     

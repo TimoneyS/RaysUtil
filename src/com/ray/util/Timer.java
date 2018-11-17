@@ -2,7 +2,6 @@ package com.ray.util;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.concurrent.atomic.AtomicInteger;
 
 import com.ray.io.Out;
 
@@ -13,13 +12,23 @@ import com.ray.io.Out;
  */
 public class Timer {
 	
-    private static AtomicInteger    BEAN_COUNT = new AtomicInteger(0);
     private static SimpleDateFormat DATE_FORMATTER = new SimpleDateFormat("[yyyy-MM-dd hh:mm:ss:ms]");
 	
 	private String name;
     private int record_count = 0;
     private long[] dateArr = new long[16];
 
+    private static final Timer DEFAULT = create("TIMER");
+    
+    public static void CLICK() {
+        DEFAULT.click();
+    }
+    
+    public static void STOP() {
+        DEFAULT.stop();
+    }
+    
+    
     /**
 	 * 时间戳
 	 */
@@ -31,14 +40,9 @@ public class Timer {
 	    return new Timer(name);
 	}
 	
-	public static Timer create() {
-	    return new Timer("TIMER " + (BEAN_COUNT.get() + 1) );
-	}
-	
 	private Timer(String name) {
 	    if (name == null) name = "";
 	    this.name = name;
-	    BEAN_COUNT.incrementAndGet();
     }
 	
 	/**
@@ -79,6 +83,10 @@ public class Timer {
             }
             dateArr = temp;
         }
+    }
+    
+    public static void main(String[] args) {
+        Timer.CLICK();
     }
 	   
 }
