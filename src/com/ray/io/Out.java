@@ -9,12 +9,11 @@ import java.util.Arrays;
  */
 public class Out {
     
-    
     /** 输出并换行 */ public static <T> void p() { System.out.println(); }
     /** 输出并换行 */ public static <T> void p(T t) { System.out.println(t); }
     /** 输出不换行 */ public static <T> void pt(T t) { System.out.print(t); }
     /** 格式化输出 */ public static <T> void pf(String s, Object...args){ System.out.printf(s, args); }
-    /** 输出间隔符 */ public static void sep() { sep(100); }
+    /** 输出间隔符 */ public static     void sep() { sep(100); }
     
     /**
      * 输出间隔符
@@ -26,7 +25,7 @@ public class Out {
         p(sb.toString());
     }
 
-    /************************************************************************************* 数组相关方法 ****************************************************/
+    /********************************** 数组相关方法 **************************************/
     
     /** 打印数组 */public static <T> void p(T[]       t) { p(Arrays.toString(t)); }
     /** 打印数组 */public static void     p(boolean[] t) { p(Arrays.toString(t)); }
@@ -86,6 +85,10 @@ public class Out {
                 Out.pf(fmt, i);
             Out.p();
         }
+    }
+    
+    public static void main(String[] args) {
+        
     }
 
 }

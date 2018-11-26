@@ -12,7 +12,7 @@ public class In {
      * @return
      */
     public static String getClassPathResource(String res) {
-        String path = In.class.getClassLoader().getResource(res).getFile();
+        String path = In.class.getResource(res).getFile();
         return path;
     }
     
@@ -25,7 +25,7 @@ public class In {
     public static String getClassPathResource(Class<?> cls, String res) {
         String pkgName = cls.getPackage().getName().replaceAll("\\.", "/");
         
-        String path = In.class.getClassLoader().getResource(pkgName + "/" + res).getFile();
+        String path = In.class.getResource(pkgName + "/" + res).getFile();
         return path;
     }
     
