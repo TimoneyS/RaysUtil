@@ -35,6 +35,14 @@ public class Out {
     /** 打印数组 */public static void     p(double[]  t) { p(Arrays.toString(t)); }
     /** 打印数组 */public static void     p(char[]    t) { p(Arrays.toString(t)); }
     
+    /** 打印数组 */public static <T> void p(T[]       t, String fmt) { for (T i : t) pf(fmt, i); p(); }
+    /** 打印数组 */public static void     p(boolean[] t, String fmt) { for (boolean i : t) pf(fmt, i); p(); }
+    /** 打印数组 */public static void     p(short[]   t, String fmt) { for (short i : t) pf(fmt, i); p(); }
+    /** 打印数组 */public static void     p(int[]     t, String fmt) { for (int i : t) pf(fmt, i); p(); }
+    /** 打印数组 */public static void     p(long[]    t, String fmt) { for (long i : t) pf(fmt, i); p(); }
+    /** 打印数组 */public static void     p(double[]  t, String fmt) { for (double i : t) pf(fmt, i); p(); }
+    /** 打印数组 */public static void     p(char[]    t, String fmt) { for (char i : t) pf(fmt, i); p(); }
+    
    /**
      * 打印二维数组
      * @param arr
@@ -43,8 +51,8 @@ public class Out {
     public static <T> void p(T[][] arr, String fmt) {
         for (T[] is : arr) {
             for (T i : is)
-                Out.pf(fmt, i);
-            Out.p();
+                pf(fmt, i);
+            p();
         }
     }
 
