@@ -12,15 +12,15 @@ public class ArrayUtil {
      * @param arr
      */
     public static void checkSorted(Comparable[] arr) {
-    	Out.pf("经检查，数组%s排序。\n", isSorted(arr) ? "已" : "未");
+    	Out.pf("Array %s sorted\n", isSorted(arr) ? "is" : "is not");
     }
 	
-	   /**
+    /**
      * 检查数组局部是否已经排序
      * @param arr
      */
     public static void checkSorted(Comparable[] arr, int lo, int hi) {
-        Out.pf("经检查，数组%s排序。\n", isSorted(arr, lo, hi) ? "已" : "未");
+        Out.pf("Array %s sorted\n", isSorted(arr, lo, hi) ? "is" : "is not");
     }
     
     /**
@@ -266,8 +266,56 @@ public class ArrayUtil {
      * @param i
      * @param j
      */
+    public static void swap(byte[] arr, int i, int j) {
+        byte temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+    }
+	
+    /**
+     * 交换数组元素位置
+     * @param arr
+     * @param i
+     * @param j
+     */
+    public static void swap(short[] arr, int i, int j) {
+        short temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+    }
+    
+    /**
+     * 交换数组元素位置
+     * @param arr
+     * @param i
+     * @param j
+     */
     public static void swap(int[] arr, int i, int j) {
         int temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+    }
+    
+    /**
+     * 交换数组元素位置
+     * @param arr
+     * @param i
+     * @param j
+     */
+    public static void swap(long[] arr, int i, int j) {
+        long temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+    }
+    
+    /**
+     * 交换数组元素位置
+     * @param arr
+     * @param i
+     * @param j
+     */
+    public static void swap(double[] arr, int i, int j) {
+        double temp = arr[i];
         arr[i] = arr[j];
         arr[j] = temp;
     }
@@ -306,6 +354,73 @@ public class ArrayUtil {
     public static void swap(boolean[] arr,  int l1, int l2, int size) {
         for (int i = 0; i < size; i ++)
             swap(arr, l1 + i, l2 + i);
+    }
+    
+    
+    /**
+     * 反转数组区域
+     * @param nums
+     * @param l
+     * @param r
+     */
+    public static <T> void reverse(byte[] nums, int l, int r) {
+        for (int i = 0; i < (r - l + 1)/2; i++)
+            swap(nums, l + i, r - i);
+    }
+    
+    /**
+     * 反转数组区域
+     * @param nums
+     * @param l
+     * @param r
+     */
+    public static <T> void reverse(short[] nums, int l, int r) {
+        for (int i = 0; i < (r - l + 1)/2; i++)
+            swap(nums, l + i, r - i);
+    }
+    
+    /**
+     * 反转数组区域
+     * @param nums
+     * @param l
+     * @param r
+     */
+    public static void reverse(int[] nums, int l, int r) {
+        for (int i = 0; i < (r - l + 1)/2; i++)
+            swap(nums, l + i, r - i);
+    }
+    
+    /**
+     * 反转数组区域
+     * @param nums
+     * @param l
+     * @param r
+     */
+    public static <T> void reverse(long[] nums, int l, int r) {
+        for (int i = 0; i < (r - l + 1)/2; i++)
+            swap(nums, l + i, r - i);
+    }
+    
+    /**
+     * 反转数组区域
+     * @param nums
+     * @param l
+     * @param r
+     */
+    public static <T> void reverse(double[] nums, int l, int r) {
+        for (int i = 0; i < (r - l + 1)/2; i++)
+            swap(nums, l + i, r - i);
+    }
+    
+    /**
+     * 反转数组区域
+     * @param nums
+     * @param l
+     * @param r
+     */
+    public static <T> void reverse(T[] nums, int l, int r) {
+        for (int i = 0; i < (r - l + 1)/2; i++)
+            swap(nums, l + i, r - i);
     }
 	
     public static void main(String[] args) {
