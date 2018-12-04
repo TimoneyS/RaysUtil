@@ -235,6 +235,24 @@ public class ArrayUtil {
         for(int i = 0; i < arr.length; i ++)
             swap(arr, i, r.nextInt(arr.length));
     }
+    
+    /**
+     * 打乱数组顺序
+     * @param arr
+     */
+    public static void shuffle(int[] arr) {
+        shuffle(arr, 42);
+    }
+    
+    /**
+     * 打乱数组顺序
+     * @param arr
+     */
+    public static void shuffle(int[] arr, int seed) {
+        Random r = new Random(seed);
+        for(int i = 0; i < arr.length; i ++)
+            swap(arr, i, r.nextInt(arr.length));
+    }
 	
 	/**
 	 * 交换数组元素位置
