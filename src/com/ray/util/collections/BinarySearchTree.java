@@ -4,7 +4,7 @@ import static com.ray.io.Out.p;
 
 import com.ray.io.Out;
 
-public class BinaryTree<K extends Comparable<K>,V > {
+public class BinarySearchTree<K extends Comparable<K>,V > {
 
     private class Node {
         Node left;
@@ -19,7 +19,7 @@ public class BinaryTree<K extends Comparable<K>,V > {
         }
     }
     
-    Node root;
+    private Node root;
     
     /**
      * 插入新元素
@@ -30,7 +30,7 @@ public class BinaryTree<K extends Comparable<K>,V > {
         root = put(root, k, v);
     }
 
-    private BinaryTree<K, V>.Node put(Node node, K k, V v) {
+    private BinarySearchTree<K, V>.Node put(Node node, K k, V v) {
         if (node == null) return new Node(k, v);
         int c = node.key.compareTo(k);
         if (c == 0) {
@@ -82,6 +82,19 @@ public class BinaryTree<K extends Comparable<K>,V > {
     }
     
     /**
+     * 获取最小元素
+     * @return
+     */
+    public Node min() {
+        return min(root);
+    }
+    
+    private Node min(Node n) {
+        if (n.left == null) return n;
+        return min(n.left);
+    }
+    
+    /**
      * 删除最大元素
      */
     public void removeMax() {
@@ -93,6 +106,31 @@ public class BinaryTree<K extends Comparable<K>,V > {
         if (n.right == null) return n.left;
         n.right = removeMax(n.right);
         n.size = size(n.left) + size(n.right);
+        return n;
+    }
+    
+    public void remove(K k) {
+        root = remove(root, k);
+    }
+    
+    public Node remove(Node n, K k) {
+        if (n == null) return n;
+        int c = n.key.compareTo(k);
+        
+        if (c == 0) {
+            if (n.right == null) return n.left;
+            if (n.left == null) return n.right;
+            
+            Node min = min(n.right);
+            n.right = removeMin(n.right);
+            n.val = min.val;
+            n.key = min.key;
+        } else if (c > 0) {
+            n.left = remove(n.left, k);
+        } else {
+            n.right = remove(n.right, k);
+        }
+        n.size = size(n.left) + size(n.right) + 1;
         return n;
     }
 
@@ -118,7 +156,7 @@ public class BinaryTree<K extends Comparable<K>,V > {
         
         
         Integer[] arr = {2,1,8,4,3,9,5,7};
-        BinaryTree<Integer, Integer> tree = new BinaryTree<>();
+        BinarySearchTree<Integer, Integer> tree = new BinarySearchTree<>();
         for (Integer num : arr) {
             tree.put(num, num);
         }
@@ -128,6 +166,10 @@ public class BinaryTree<K extends Comparable<K>,V > {
         tree.show();
         tree.removeMax();
         tree.show();
+        
+        tree.remove(2);
+        tree.show();
+        
         
     }
     
