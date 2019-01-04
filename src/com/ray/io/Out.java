@@ -97,6 +97,14 @@ public class Out {
         }
     }
     
+    /**
+     * 打印二进制
+     * @param n
+     */
+    public static void printBinary(int n) {
+        System.out.println(Integer.toBinaryString(n));
+    }
+    
     public static void main(String[] args) {
         
     }
