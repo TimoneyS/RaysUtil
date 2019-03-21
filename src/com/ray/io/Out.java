@@ -76,10 +76,10 @@ public class Out {
      * @param arr
      * @param fmt
      */
-    public static void p(boolean[][] arr, String fmt) {
+    public static void p(boolean[][] arr) {
         for (boolean[] is : arr) {
             for (boolean i : is)
-                Out.pf(fmt, i);
+                Out.pt(i? "T " : "F ");
             Out.p();
         }
     }
