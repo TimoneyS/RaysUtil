@@ -10,7 +10,7 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class Http {
+public class Https {
     
     public static String doGet(String httpurl) {
         HttpURLConnection connection = null;
@@ -26,10 +26,8 @@ public class Http {
             connection.setConnectTimeout(15000);
             // 设置读取远程返回的数据时间：60000毫秒
             connection.setReadTimeout(60000);
-            
             // 发送请求
             connection.connect();
-            
             // 通过connection连接，获取输入流
             if (connection.getResponseCode() == 200) {
                 result = readResult(connection);
