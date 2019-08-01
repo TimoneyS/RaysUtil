@@ -98,6 +98,19 @@ public class Out {
     }
     
     /**
+     * 打印二维数组
+     * @param arr
+     * @param fmt
+     */
+    public static void p(long[][] arr, String fmt) {
+        for (long[] is : arr) {
+            for (long i : is)
+                Out.pf(fmt, i);
+            Out.p();
+        }
+    }
+    
+    /**
      * 打印二进制
      * @param n
      */
