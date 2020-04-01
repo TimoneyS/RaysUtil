@@ -5,11 +5,8 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class In {
-    
     /**
      * 获取类路径下的资源url
-     * @param res
-     * @return
      */
     public static String getClassPathResource(String res) {
         String path = In.class.getResource(res).getFile();
@@ -18,9 +15,6 @@ public class In {
     
     /**
      * 获取指定类的路径的资源url
-     * @param cls
-     * @param res
-     * @return
      */
     public static String getClassPathResource(Class<?> cls, String res) {
         String pkgName = cls.getPackage().getName().replaceAll("\\.", "/");
@@ -31,8 +25,6 @@ public class In {
     
     /**
      * 从工程目录获取Scanner
-     * @param res
-     * @return
      */
     public static Scanner getProjectScanner(String res) {
         Scanner in = null;
@@ -46,8 +38,6 @@ public class In {
     
     /**
      * 从类路径获取资源的Scanner
-     * @param res
-     * @return
      */
     public static Scanner getClassPathScanner(String res) {
         Scanner in = null;
@@ -62,13 +52,9 @@ public class In {
     
     /**
      * 类路径的指定类所在的包下获取资源的Scanner
-     * @param cl
-     * @param res
-     * @return
      */
     public static Scanner getClassPathScanner(Class<?> cl, String res) {
         String pkgName = cl.getPackage().getName().replaceAll("\\.", "/");
         return getClassPathScanner(pkgName + "/" + res) ;
     }
-    
 }

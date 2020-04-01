@@ -25,7 +25,7 @@ public class TimeUtil extends Date {
      * @param mi    分钟
      * @param ss    秒分
      * @param ms    毫秒
-     * @return
+     * @return 日期
      */
     public static Date create(int yy, int mm, int dd, int hh, int mi, int ss, int ms) {
         try {
@@ -47,7 +47,7 @@ public class TimeUtil extends Date {
      * @param hh    时
      * @param mi    分
      * @param ss    秒
-     * @return
+     * @return 日期
      */
     public static Date create(int yy, int mm, int dd, int hh, int mi, int ss) {
         return create(yy, mm, dd, hh, mi, ss, 0);
@@ -58,22 +58,22 @@ public class TimeUtil extends Date {
      * @param yy    年
      * @param mm    月
      * @param dd    日
-     * @return
+     * @return 日期
      */
     public static Date create(int yy, int mm, int dd) {
         return create(yy, mm, dd, 0, 0, 0, 0);
     }
     
-    public static String formate(Date date) {
+    public static String format(Date date) {
         return dateFormat1.format(date);
     }
     
     public static void main(String[] args) {
         Date t = TimeUtil.create(2018, 10, 20, 19, 38, 10, 1);
-        Out.p(TimeUtil.formate(t));
+        Out.p(TimeUtil.format(t));
         
         t = TimeUtil.create(2018, 10, 20, 19, 38, 10, 2);
-        Out.p(TimeUtil.formate(t));
+        Out.p(TimeUtil.format(t));
     }
     
 }

@@ -6,7 +6,6 @@ package com.ray.io;
  *
  */
 public class Dir {
-    
     public static String getClassPath(Class<?> cls) {
         return cls.getResource("").getPath();
     }
@@ -14,5 +13,4 @@ public class Dir {
     public static String getSourcePath(Class<?> cls) {
         return cls.getResource("").getPath().replaceAll("/bin/", "/src/");
     }
-    
 }
